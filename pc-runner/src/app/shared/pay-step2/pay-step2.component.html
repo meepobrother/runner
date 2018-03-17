@@ -1,4 +1,4 @@
-<div class="pay step2" style="display:block;">
+<div class="pay step2" style="display:block;" [formGroup]="form">
   <div class="details">
     <ul>
       <li class="distance" *ngIf="props.distance">
@@ -75,6 +75,6 @@
     </div>
   </div>
   <div class="ucard">
-    <input type="button" name="pay-sub" class="sub pay-sub" value="需支付0元，去支付" id="confirmorder" />
+    <input type="button" (click)="pay()" name="pay-sub" class="sub pay-sub" value="需支付0元，去支付" id="confirmorder" />
   </div>
 </div>

@@ -14,7 +14,6 @@ import { FooterComponent } from './footer/footer.component';
 import { OrderNavComponent } from './order-nav/order-nav.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { CategoryComponent } from './category/category.component';
-import { UuPayComponent } from './uu-pay/uu-pay.component';
 import { LineTimeComponent } from './line-time/line-time.component';
 import { QueueTimesComponent } from './queue-times/queue-times.component';
 import { TimeSelectComponent } from './time-select/time-select.component';
@@ -40,7 +39,6 @@ import { PayWayComponent } from './pay-way/pay-way.component';
     OrderNavComponent,
     NavListComponent,
     CategoryComponent,
-    UuPayComponent,
     LineTimeComponent,
     QueueTimesComponent,
     TimeSelectComponent,
@@ -63,7 +61,6 @@ import { PayWayComponent } from './pay-way/pay-way.component';
     OrderNavComponent,
     NavListComponent,
     CategoryComponent,
-    UuPayComponent,
     LineTimeComponent,
     QueueTimesComponent,
     TimeSelectComponent

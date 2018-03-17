@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class PayStep2Component implements OnInit {
   @Input() props: any = {};
   @Input() form: FormGroup;
+  @Output() onPay: EventEmitter<any> = new EventEmitter();
   constructor(
     public fb: FormBuilder
   ) { 
@@ -19,6 +20,10 @@ export class PayStep2Component implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  pay(){
+    this.onPay.emit();
   }
 
 }
