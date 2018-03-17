@@ -72,7 +72,9 @@ export class OrderService {
       // 配送工具
       goods_tool: [''],
       // 物品保价
-      goods_insurance: ['']
+      goods_insurance: [''],
+      openid: [1],
+      appid: [1]
     });
 
     this.we7.locChange.subscribe(res => {

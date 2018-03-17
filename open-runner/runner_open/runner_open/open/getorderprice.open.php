@@ -1,12 +1,12 @@
 <?php
 global $_W, $_GPC;
-include IA_ROOT."/addons/runner_open/open/_function.php";
+include IA_ROOT . "/addons/runner_open/open/_function.php";
 
 $input = $_GPC['__input'];
 $data = array();
 // 第三方对接平台订单id
 $data['origin_id'] = $input['origin_id'];
-if(empty($data['origin_id'])){
+if (empty($data['origin_id'])) {
     $return['return_msg'] = '订单ID不能为空';
     $return['return_code'] = 'fail';
     die(json_encode($return));
@@ -14,22 +14,22 @@ if(empty($data['origin_id'])){
 // 发货地
 $data['from_address'] = $input['from_address'];
 $data['from_usernote'] = $input['from_usernote'];
-if(empty($data['from_address']) || empty($data['from_usernote'])){
-    $return['return_msg'] = '请完善发货地';
-    $return['return_code'] = 'fail';
+if (empty($data['from_address'])) {
+    $return['return_msg'] = '无法解析起始地';
+    $return['return_code'] = '-1001';
     die(json_encode($return));
 }
 $data['to_address'] = $input['to_address'];
 $data['to_usernote'] = $input['to_usernote'];
-if(empty($data['to_address']) || empty($data['to_usernote'])){
-    $return['return_msg'] = '请完善发货地';
-    $return['return_code'] = 'fail';
+if (empty($data['to_address'])) {
+    $return['return_msg'] = '无法解析目的地';
+    $return['return_code'] = '-1002';
     die(json_encode($return));
 }
 // 收货地
 $data['city_name'] = $input['city_name'];
 $data['county_name'] = $input['county_name'];
-if(empty($data['city_name'])){
+if (empty($data['city_name'])) {
     $return['return_msg'] = '城市信息有误';
     $return['return_code'] = 'fail';
     die(json_encode($return));
@@ -39,7 +39,7 @@ $data['subscribe_type'] = $input['subscribe_type'];
 
 // 预约时间 2015-09-18 14:00:25:000
 $data['subscribe_time'] = $input['subscribe_time'];
-if($data['subscribe_type'] == 1 && empty($data['subscribe_time'])){
+if ($data['subscribe_type'] == 1 && empty($data['subscribe_time'])) {
     $return['return_msg'] = '请选择预约时间';
     $return['return_code'] = 'fail';
     die(json_encode($return));
@@ -49,19 +49,13 @@ $data['coupon_id'] = $input['coupon_id'] > 0 ? $input['coupon_id'] : 0;
 // 订单小类 0帮我送(默认) 1帮我买
 $data['send_type'] = empty($input['send_type']) ? $input['send_type'] : 0;
 
-$data['sign'] = $input['sign'];
-$data['nonce_str'] = $input['nonce_str'];
-$data['timestamp'] = $input['timestamp'];
-if (empty($data['sign']) || empty($data['nonce_str']) || empty($data['timestamp'])) {
-    $return['return_msg'] = '签名格式错误';
-    $return['return_code'] = 'fail';
-    die(json_encode($return));
-}
+
 // uid or openid
 $data['openid'] = $input['openid'];
+$data['openid'] = $data['openid'] ? $data['openid'] : $_W['member']['uid'];
 if (empty($data['openid'])) {
-    $return['return_msg'] = '登录失效，请重新登录';
-    $return['return_code'] = 'fail';
+    $return['return_msg'] = 'openid无效';
+    $return['return_code'] = '-105';
     die(json_encode($return));
 }
 $data['appid'] = $input['appid'];
@@ -82,12 +76,11 @@ if (empty($data['to_lat']) || empty($data['to_lng']) || empty($data['from_lat'])
     die(json_encode($return));
 }
 // 校验签名
+$data['nonce_str'] = random(16, false);
+$data['timestamp'] = time();
 $sign = bulidSign($data);
-if ($data['sign'] != $sign) {
-    $return['return_msg'] = '签名失败';
-    $return['return_code'] = 'fail';
-    die(json_encode($return));
-}
+$data['sign'] = $sign;
+
 // 根据经纬度 计算距离
 $distance = getDistanceByLatLng($data['from_lat'], $data['from_lng'], $data['to_lat'], $data['to_lng']);
 $freight_money = getFreightMoney($distance);
