@@ -1,0 +1,26 @@
+<div class="pay step1" style="display:block;" [formGroup]="form">
+  <div class="details">
+    <ul>
+      <li class="distance" *ngIf="props.distance">
+        <b>订单距离</b>
+        <h3>
+          <span class="ShowKm">0</span>公里</h3>
+      </li>
+      <li class="money">
+        <b>跑腿费</b>
+        <h3>
+          <span class="FreightMoney">0</span>元</h3>
+      </li>
+    </ul>
+  </div>
+  <div class="ucard">
+    <div class="tag" style="width: 100%;">
+      <label>手机号码</label>
+      <input type="tel" formControlName="usermobile" maxlength="11" autocomplete="off" class="inp" style="width: 69.8%;" placeholder="请填写手机号码"
+      />
+    </div>
+  </div>
+  <div class="ucard" style="margin-bottom: 0;">
+    <input type="button" name="pay-sub" class="sub pay-sub" value="确认订单" (click)="next()" id="login" />
+  </div>
+</div>

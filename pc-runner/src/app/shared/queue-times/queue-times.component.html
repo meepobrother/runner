@@ -1,0 +1,30 @@
+<div class="queueTimes" style="padding-bottom:30px;" [formGroup]="form">
+  <label>排队时长</label>
+  <div class="timer-box">
+    <div class="timer time-day">
+      <input type="text" class="inp" (click)="selectDay()" formControlName="timeDayTitle" placeholder="0天" readonly="readonly"
+      />
+      <div class="rang rang-d"></div>
+      <div class="down-box" [class.shown]="showDay">
+        <a href="javascript:;" *ngFor="let item of [0,1,2,3,4,5,6]" (click)="setDay(item)">{{item}}天</a>
+      </div>
+    </div>
+    <div class="timer time-hour">
+      <input type="text" class="inp" (click)="selectHour()" formControlName="timeHourTitle" placeholder="0小时" readonly="readonly"
+      />
+      <div class="rang rang-d"></div>
+      <div class="down-box" [class.shown]="showHour">
+        <a href="javascript:;" *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]" (click)="setHour(item)">{{item}}小时</a>
+      </div>
+    </div>
+    <div class="timer time-minute">
+      <input type="text" class="inp" (click)="selectMinute()" formControlName="timeMinuteTitle" value="30分钟" placeholder="30分钟"
+        readonly="readonly" />
+      <div class="rang rang-d"></div>
+      <div class="down-box" [class.shown]="showMinute">
+        <a href="javascript:;" *ngFor="let item of [0,15,30,45]" (click)="setMinute(item)">{{item}}分钟</a>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

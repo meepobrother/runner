@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body,
+app-root {
+    display: block;
+    height: 100%;
+}
+
+body {
+    background: #ebebeb;
+    min-width: 1200px;
+}
+
+web-root {
+    width: 1200px;
+    margin: 98px auto 56px;
+    display: block;
+}
+
+@import "assets/css/swiper.min.css";
+@import "assets/css/video-js.min.css";
+@import "assets/css/newbase.css";
+@import "assets/css/newstyle.css";
+@import "assets/css/neworder.css";
+@import "assets/css/iconfont.css";
+.btn-link {
+    font-weight: 400;
+    background-color: transparent;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.bs-chevron {
+    border-style: solid;
+    display: block;
+    width: 9px;
+    height: 9px;
+    position: relative;
+    border-width: 3px 0px 0 3px;
+}
+
+.bs-chevron-up {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 2px;
+}
+
+timepicker {
+    a.btn-link {
+        width: 30px !important;
+        height: 10px !important;
+        background: #ffffff;
+    }
+}

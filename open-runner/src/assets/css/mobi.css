@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+}
+.pageMobi {
+  color: #555;
+  padding: 0 12px 50px;
+  font-size: 14px;
+  line-height: 2;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.pageMobi .title {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0;
+}
+.pageMobi .column h1 {
+  font-size: 18px;
+  margin-top: 14px;
+}
+.pageMobi .column h2 {
+  font-size: 14px;
+  margin-top: 30px;
+}
+.pageMobi .column p {
+  margin: 10px 0;
+}
+.pageMobi .column ul {
+  margin: 14px 0 10px 14px;
+}
+.pageMobi .column ul li {
+  list-style: circle;
+  margin-left: 20px;
+  margin-top: 6px;
+}
+.pageMobi .column .imgbox {
+  width: 94%;
+  border: 1px solid #ddd;
+  margin: 20px auto;
+  position: relative;
+}
+.pageMobi .column .imgbox img {
+  display: block;
+  width: 100%;
+}
+/*# sourceMappingURL=mobi.css.map */

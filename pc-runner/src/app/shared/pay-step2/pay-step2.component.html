@@ -1,0 +1,80 @@
+<div class="pay step2" style="display:block;">
+  <div class="details">
+    <ul>
+      <li class="distance" *ngIf="props.distance">
+        <b>订单距离</b>
+        <h3>
+          <span class="ShowKm">0</span>公里</h3>
+      </li>
+      <li class="money">
+        <b>跑腿费</b>
+        <h3>
+          <span class="FreightMoney">0</span>元</h3>
+      </li>
+      <li class="goodsFei" *ngIf="props.goods">
+        <b>商品费</b>
+        <h3>
+          <span class="GoodsMoney">0</span>元</h3>
+      </li>
+      <li class="money" *ngIf="props.baojia">
+        <b>保价费</b>
+        <h3>
+          <span class="goodsInsuranceMoney">0</span>元</h3>
+      </li>
+    </ul>
+  </div>
+  <div class="ucardCoupon">
+    <label style="text-align:right;">优惠券</label>
+    <div class="tag special help-input" style="width: 69.8%;display:inline-block;" id="coupon">
+      <select id="couponSelect" formControlName="coupon_id">
+        <option value="-1">请选择优惠券</option>
+      </select>
+    </div>
+    <div class="noCouponBox" style="width: 69.8%;display:inline-block;position:relative;">
+      <input type="text" name="noCoupun" disabled="disabled" placeholder="暂无可用优惠券" style="width:100%" />
+      <img src="assets/images/noCoupon.png" alt="" style="position:absolute; right:10px;top:5px;z-index:2;">
+    </div>
+  </div>
+  <div class="details">
+    <ul>
+      <li class="money">
+        <b>总优惠</b>
+        <h3 class="TotalPriceOff">暂无优惠</h3>
+      </li>
+    </ul>
+  </div>
+  <div class="ucard" style="margin-bottom: 25px;">
+    <label>支付方式</label>
+    <div class="tag" style="float:left;width:249px;">
+        <ul class="payway">
+            <li id="weixin">
+              <label>
+                <input type="radio" autocomplete="off" formControlName="countpay" id="weixinpay" value="wechat" checked="checked">
+                <span style="margin:0;" class="myicon-weixin">微信支付</span>
+              </label>
+            </li>
+            <li id="alipay">
+              <label>
+                <input type="radio" autocomplete="off" formControlName="countpay" id="alipay" value="alipay">
+                <span style="margin:0;" class="myicon-alipay">支付宝支付</span>
+              </label>
+            </li>
+            <li id="balance">
+              <label>
+                <input type="radio" autocomplete="off" formControlName="countpay" value="credit">
+                <span style="margin:0;" class="myicon-uucount">账户余额</span>
+              </label>
+            </li>
+            <li id="enterbalance">
+              <label>
+                <input type="radio" autocomplete="off" formControlName="countpay" value="divider">
+                <span style="margin:0;" class="myicon-uucount">货到付款</span>
+              </label>
+            </li>
+          </ul>
+    </div>
+  </div>
+  <div class="ucard">
+    <input type="button" name="pay-sub" class="sub pay-sub" value="需支付0元，去支付" id="confirmorder" />
+  </div>
+</div>

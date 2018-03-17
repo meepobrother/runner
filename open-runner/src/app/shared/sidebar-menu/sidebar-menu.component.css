@@ -1,0 +1,5 @@
+.active {
+    color: #009fe8 !important;
+    -webkit-transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+    transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+}

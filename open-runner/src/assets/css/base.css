@@ -1,0 +1,146 @@
+h4,
+h5,
+h6,
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+
+ul,
+ol {
+	margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+html,
+body {
+	font-family: "microsoft yahei", sans-serif;
+	font-size: 100%;
+	background: #fff;
+	overflow-x: hidden!important;
+}
+
+a {
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+a:hover {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	text-decoration: none;
+}
+/*通用底部*/
+
+.footer {
+	width: 100%;
+	min-width: 1200px;
+	background: #F5F5F5;
+}
+
+.footer .foot {
+	width: 1060px;
+	margin: 0 auto;
+	padding: 60px 0 50px;
+	overflow: hidden;
+}
+
+.footer .foot dl,
+.footer .foot dt,
+.footer .foot dd {
+	margin: 0;
+	padding: 0;
+}
+
+.footer .foot dl {
+	float: left;
+}
+
+.footer .foot dl.dl-nav {
+	width: 175px;
+}
+
+.footer .foot dl.dl-contact {
+	width: 270px;
+}
+
+.footer .foot dl.dl-ewm {
+	text-align: center;
+}
+
+.footer .foot dl.dl-ewm dd {
+	margin-bottom: 10px;
+	line-height: 24px;
+	position: relative;
+	font-size: 12px;
+}
+
+.footer .foot dl.dl-ewm dd .icon-foot-weixin {
+	position: absolute;
+}
+
+.footer .foot dd.tel {
+	font-size: 28px;
+	color: #333333;
+	margin-bottom: 36px;
+}
+
+.footer .foot dd.email {
+	font-size: 20px;
+	color: #333333;
+}
+
+.footer .foot dt {
+	font-size: 16px;
+	color: #000000;
+	margin-bottom: 28px;
+	font-weight: normal;
+}
+
+.footer .foot dd a {
+	color: #666666;
+	line-height: 35px;
+	font-size: 12px;
+}
+
+.footer .foot dd a:hover {
+	color: #ff8b03;
+}
+
+.footer .copy {
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	color: #666666;
+	background: #e6e6e6;
+	text-align: center;
+}
+.footer .foot dl.dl-ewm.fr {
+	float: right;
+}
+.footer .foot dl.dl-ewm img{
+	width: 100px;
+	height: 100px;
+}
+.footer .foot dd.icon-foot-weixin {
+	padding-left: 30px;
+	background: url("../images/weixinico.png") left center no-repeat;
+	background-size: 30%;
+	display: inline-block;
+}
+
+.footer .foot dd.icon-foot-sina {
+	padding-left: 30px;
+	background: url("../images/sina.png") left center no-repeat;
+	background-size: 30%;
+	display: inline-block;
+}

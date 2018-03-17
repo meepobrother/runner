@@ -1,0 +1,51 @@
+<div class="order-form" [formGroup]="form">
+    <div class="uuBusi">
+        <div class="infos-box infos-box1">
+            <div class="ucard" style="margin-bottom: 0;">
+                <label>排队类型</label>
+                <div class="tag category" id="lineType">
+                    <a href="javascript:;" class="selected">万能排队</a>
+                </div>
+            </div>
+            <div class="ucard" style="height: 96px;position:relative;">
+                <label>备注信息</label>
+                <div class="tag">
+                    <textarea class="inp w100 textarea-large maxText" autocomplete="off" formControlName="note" type="text" placeholder="找人排队，托人办事儿，请填写您的备注信息"></textarea>
+                    <span style="position:absolute;font-size:12px;color:#bbbbbb;right:15px;bottom:0px;z-index:10;">最多80字</span>
+                </div>
+            </div>
+            <div class="ucard">
+                <label>排队地址</label>
+                <div class="tag">
+                    <input class="inp w86 required" autocomplete="off" type="text" formControlName="startaddress" id="startaddress" placeholder="请填写排队地址"
+                        title="排队地址">
+                    <span class="locate" style="right: 124px;">
+                        <i class="iconfont icon-locate"></i>定位
+                    </span>
+                </div>
+            </div>
+            <div class="ucard">
+                <label>备注地址</label>
+                <div class="tag">
+                    <input type="text" name="startaddressdoor" autocomplete="off" formControlName="startaddressdoor" class="inp w86" placeholder="请填写具体楼号及门牌号"
+                        title="备注地址" />
+                </div>
+            </div>
+            <div class="ucard" style="padding-bottom:30px;">
+                <label>联系电话</label>
+                <div class="tag">
+                    <input type="tel" maxlength="11" autocomplete="off" class="inp" formControlName="starttel" id="starttel" placeholder="请输入联系人手机号码" style="width: 32%">
+                    <span class="msg msg5">必填!</span>
+                    <span class="tel msg msg6">手机号码格式不正确!</span>
+                    <span class="msg msg7">必填!</span>
+                </div>
+            </div>
+        </div>
+        <div class="infos-box infos-box2" style="z-index: 9;">
+            <line-time [form]="form"></line-time>
+        </div>
+    </div>
+    <uu-pay></uu-pay>
+    <ewm-pay></ewm-pay>
+</div>
+<div style="clear:both;"></div>

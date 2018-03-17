@@ -1,0 +1,16 @@
+.myplaceholder {
+    color: #999 !important;
+}
+
+.business-list .item h5 {
+    -webkit-border-radius: 50%;
+}
+
+.uuBusi .infos-box {
+    z-index: 8;
+}
+
+.tangram-suggestion table tr td {
+    height: 40px;
+    line-height: 40px;
+}

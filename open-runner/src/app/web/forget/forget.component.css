@@ -1,0 +1,18 @@
+.pageRegister .con {
+    margin-top: 80px;
+    min-height: 720px;
+}
+
+.copyrights {
+    margin-top: 18px;
+}
+
+@media (max-width: 991px) {
+    .pageRegister .con {
+        margin-top: 0;
+        min-height: 420px;
+    }
+    .header-main {
+        display: none;
+    }
+}

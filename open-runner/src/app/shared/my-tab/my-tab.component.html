@@ -1,0 +1,5 @@
+<ul id="myTab" class="nav nav-tabs">
+  <li [routerLink]="item.link" *ngFor="let item of list" routerLinkActive="active">
+    <a href="javascript:;">{{item.title}}</a>
+  </li>
+</ul>

@@ -1,0 +1,11 @@
+.myplaceholder {
+    color: #999 !important;
+}
+/*兼容写法*/
+.business-list .item h5 {
+    -webkit-border-radius: 50%;
+}
+
+.infos-box4:before {
+    content: '3';
+}

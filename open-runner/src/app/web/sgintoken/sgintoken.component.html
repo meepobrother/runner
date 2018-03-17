@@ -1,0 +1,36 @@
+<div class="page-container">
+  <div class="left-content">
+    <div class="mother-grid-inner">
+      <header-main></header-main>
+      <div class="inner-block">
+        <div class="main-page-mysoft">
+          <div class="main-page-box">
+            <p class="Ktitle">附：消息体签名算法</p>
+            <p class="Kcon">
+              UU跑腿将对数据里面的内容进行鉴权，确定下单的信息是真实、有效、合理的。因此，这里将定义生成sign字符串的方法。
+              <br/>
+              <br/> 1.对所传入参数，先排除值为空的参数，然后按照字段名的ASCII码从小到大排序（字典序）后，使用URL键值对的格式（即key1=value1&key2=value2 …）拼接成字符串string1；
+              <br/> 2.在string1最后拼接上&key=appkey（应用密钥）得到字符串string2；
+              <br/> 3.将string2中所有字母转换为大写字母，得到字符串string3；
+              <br/> 4.对string3进行MD5(32位)加密，并将得到的MD5密码字符串中的字母转换为大写字母，得到sign值。
+            </p>
+            <div class="description">
+              <form>
+                <p class="method">应用密钥(appkey): </p>
+                <input id="txtAppKey" style="width: 100%;" type="text" placeholder="如果为空，不能生成string2,string3,sign" spellcheck="false" />
+                <p class="method">URL键值对格式的字符串:（即key1=value1&key2=value2 …）</p>
+                <textarea id="textUrlParams" rows="6" style="width:100%;" spellcheck="false"> </textarea>
+                <button id="btnGenerate" type="button" class="btn btn-primary btn-lg" style="margin-top:10px;">生成字符串</button>
+              </form>
+            </div>
+            <div id="divParamsFormat" class="description" style="display:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <copyrights></copyrights>
+    </div>
+  </div>
+  <sidebar-menu></sidebar-menu>
+  <div class="clearfix"> </div>
+</div>

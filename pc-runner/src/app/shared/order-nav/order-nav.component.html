@@ -1,0 +1,15 @@
+<div class="order-nav">
+  <!--四个功能样式-->
+  <div class="secNav">
+    <div class="business-list">
+      <a *ngFor="let item of list">
+        <div class="item" [routerLink]="item.link" routerLinkActive="active">
+          <h5>
+            <i class="iconfont" [ngClass]="item.icon"></i>
+          </h5>
+          <p>{{item.title}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.shown {
+    display: block !important;
+}
+
+
+
+timepicker {
+    float: left;
+}
+
+select{
+    width: 424px !important;
+    background-position: 410px center !important;
+}

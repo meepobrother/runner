@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="">
+	<application setting="false">
+		<name><![CDATA[跑腿开放平台]]></name>
+		<identifie><![CDATA[runner_open]]></identifie>
+		<version><![CDATA[1.0.0]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></ability>
+		<description><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></description>
+		<author><![CDATA[]]></author>
+		<url><![CDATA[https://github.com/meepobrother/runner_open#readme]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+			<message type="text" />
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+		<supports>
+			<item type="app" />
+		</supports>
+	</platform>
+	<bindings>
+		<cover>
+		</cover>
+		<menu>
+			<entry title="登录" do="login" state="" direct="true" />
+			<entry title="注册" do="register" state="" direct="true" />
+			<entry title="忘记密码" do="forget" state="" direct="true" />
+			<entry title="开发文档" do="developword" state="" direct="true" />
+			<entry title="错误代码" do="errorcode" state="" direct="true" />
+			<entry title="Demo下载" do="demo" state="" direct="true" />
+			<entry title="接入流程" do="process" state="" direct="true" />
+		</menu>
+	</bindings>
+	<permissions></permissions>
+	<install><![CDATA[install.php]]></install>
+	<uninstall><![CDATA[uninstall.php]]></uninstall>
+	<upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

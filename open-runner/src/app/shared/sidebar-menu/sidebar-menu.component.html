@@ -1,0 +1,17 @@
+<div class="sidebar-menu">
+  <div class="logo">
+    <a href="javascript:;" class="sidebar-icon">
+      <span class="fa fa-bars"></span>
+    </a>
+  </div>
+  <div class="menu">
+    <ul id="menu">
+      <li *ngFor="let item of list">
+        <a [routerLink]="item.link" routerLinkActive="active">
+          <i class="fa fa-book nav_icon"></i>
+          <span>{{item.title}}</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

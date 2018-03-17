@@ -1,0 +1,135 @@
+<div class="order-form">
+  <div>
+    <form action="" method="post">
+      <div class="uuBusi">
+        <div class="infos-box infos-box1">
+          <div class="ucard" style="margin-bottom: 0;">
+            <label>购买内容</label>
+            <category></category>
+          </div>
+          <div class="ucard">
+            <label>收货地址</label>
+            <div class="tag">
+              <input type="text" class="inp w86" autocomplete="off" name="endaddress" id="endaddress" placeholder="请填写收货地址" title="收货地址"
+              />
+              <span class="locate">
+                <i class="iconfont icon-locate"></i>定位</span>
+            </div>
+          </div>
+          <div class="ucard">
+            <label>备注地址</label>
+            <div class="tag">
+              <input type="text" name="endaddressdoor" autocomplete="off" id="endaddressdoor" class="inp w86" placeholder="请填写具体楼号及门牌号"
+                title="备注地址" />
+            </div>
+          </div>
+          <div class="ucard" style="padding-bottom:30px;margin-bottom:0">
+            <label>收货电话</label>
+            <div class="tag">
+              <input type="tel" maxlength="11" autocomplete="off" name="tel" id="tel" class="inp help-input" placeholder="请输入联系人手机号码">
+              <span class="msg msg5">必填!</span>
+              <span class="tel msg msg6">手机号码格式不正确!</span>
+              <span class="msg msg7">必填!</span>
+            </div>
+          </div>
+        </div>
+        <div class="infos-box  infos-box2" style="z-index: 9;">
+          <div class="ucard">
+            <label>购买地址</label>
+            <div class="tag">
+              <input type="text" name="startaddress" autocomplete="off" id="startaddress" class="inp w86" placeholder="请填写购买地址" title="购买地址"
+              />
+              <span class="locate">
+                <i class="iconfont icon-locate"></i>定位</span>
+            </div>
+          </div>
+          <div class="ucard">
+            <label>备注地址</label>
+            <div class="tag">
+              <input type="text" name="startaddressdoor" autocomplete="off" id="startaddressdoor" class="inp w86" placeholder="请填写具体楼号及门牌号"
+                title="备注地址" />
+            </div>
+          </div>
+          <div class="ucard" style="height: 96px;">
+            <label>购买要求</label>
+            <div class="tag" style="position:relative;">
+              <textarea autocomplete="off" class="inp w100 textarea-large required maxText" name="details" id="details" placeholder="想买什么就买什么，请输入需要购买商品的名称和数量"></textarea>
+              <span class="msg msg1">必填!</span>
+              <span style="position:absolute;font-size:12px;color:#bbbbbb;right:15px;bottom:0px;z-index:10;">最多80字</span>
+            </div>
+          </div>
+          <div class="ucard" style="margin-bottom: 0;">
+            <div class="more-content" [style.display]="showMore">
+              <div class="ucard" style="padding-bottom:20px;margin-bottom:0">
+                <label>商品价格</label>
+                <div class="tag">
+                  <input type="text" autocomplete="off" name="price" id="money" class="inp help-input help-price" placeholder="请填写商品价格">
+                  <div class="tips" style="float:none;">
+                    <div class="warn" style="line-height: 36px; display: inline-block;">
+                      <img src="assets/images/help-star.png" alt="tip">
+                      <span>如不填写默认不知道价格</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ucard" style="line-height:none;">
+                <label>购买时间</label>
+                <div class="tag special help-input send-input" id="sendChoice">
+                  <select name="" id="sendTime">
+                    <option value="0">立即购买</option>
+                    <option value="1">预约时间</option>
+                  </select>
+                  <div class="tips">
+                    <div class="con warn" id="sendTimeWarn" style="display: block;">
+                      <img src="assets/images/help-star.png" alt="tip">跑男接单后立即购买</div>
+                    <div class="con money" id="sendTimeInput">
+                      <input class="inp date" autocomplete="off" id="yueDate" data-val="0" type="text" placeholder="选择时间">
+                      <span class="msg msg2 sendTimemsg" style="left: 29.5%;">必填!</span>
+                      <span class="rang rang-d"></span>
+                      <div class="warn" style="line-height: 36px; margin-left: 6px; display: none;" id="subText">
+                        <i class="iconfont icon-warn"></i>
+                        <span>预约时间支持30分钟以后24小时以内.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ucard">
+                <label>商品重量</label>
+                <div class="tag special help-input" id="goodsWeight">
+                  <select name="" id="goodHeavy">
+                    <option value="-2222">-2222</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ucard">
+                <label>配送工具</label>
+                <div class="tag special help-input" id="transport">
+                  <select name="" id="goodTool">
+                    <option value="0">不限</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ucard" style="margin-bottom: 0px;">
+                <label>特殊要求</label>
+                <div class="tag special help-input" id="specialType" class="help-specialType">
+                  <div>
+                    <input type="checkbox" id="sTemp" class="help-chk" name="specialType">
+                    <label class="help-chk-label" for="sTemp" style="padding-right:0px;">
+                      <span>保温箱</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a href="javascript:;" (click)="switchMore()" class="more-bg">
+              <i class="more-down"></i>点击展开更多</a>
+          </div>
+        </div>
+      </div>
+      <uu-pay></uu-pay>
+      <ewm-pay></ewm-pay>
+    </form>
+  </div>
+</div>
+<div style="clear:both;"></div>

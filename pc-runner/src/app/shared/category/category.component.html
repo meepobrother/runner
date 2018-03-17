@@ -1,0 +1,3 @@
+<div class="tag category" id="goodstype">
+  <a href="javascript:;" *ngFor="let item of list" (click)="selectItem(item)" [class.selected]="item.active">{{item.title}}</a>
+</div>

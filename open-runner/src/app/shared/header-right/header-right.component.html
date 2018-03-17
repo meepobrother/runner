@@ -1,0 +1,10 @@
+<div class="header-right">
+  <div class="profile_details rightnav">
+    <ul>
+      <li *ngFor="let item of list">
+        <a [routerLink]="item.link" class="dropdown-toggle">{{item.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"> </div>
+</div>

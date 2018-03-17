@@ -1,0 +1,20 @@
+<table class="Ktable">
+  <tbody>
+    <tr>
+      <th>接口名称</th>
+      <th>功能描述</th>
+    </tr>
+    <tr *ngFor="let item of docs">
+      <td>
+        <a [routerLink]="'/web/site/entry/'+module+'/wordshow'" [queryParams]="{code: item.code}">{{item.title}}</a>
+      </td>
+      <td>{{item.desc}}</td>
+    </tr>
+    <tr>
+      <td>
+        <a [routerLink]="'/web/site/entry/'+module+'/sgintoken'">附：消息体签名算法</a>
+      </td>
+      <td>消息体签名算法</td>
+    </tr>
+  </tbody>
+</table>

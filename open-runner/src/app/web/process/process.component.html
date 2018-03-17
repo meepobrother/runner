@@ -1,0 +1,37 @@
+<div class="page-container">
+  <div class="left-content">
+    <div class="mother-grid-inner">
+      <!--header start here-->
+      <header-main></header-main>
+      <div class="inner-block">
+        <div class="main-page-myprofit">
+          <div class="main-page-box">
+            <div class="main-page-title">
+              <h1>接入流程详解</h1>
+            </div>
+            <div class="main-page-body">
+              <div class="process">
+                <div class="nav">
+                  <ul>
+                    <li *ngFor="let tab of tabs" (click)="onTab(tab)" class="sh" [class.active]="tab.active">
+                      <p class="tit">{{tab.title}}</p>
+                      <p class="subtit">{{tab.desc}}</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="process-box">
+                  <process-box1 *ngIf="activeTab?.code === 'tab1'"></process-box1>
+                  <process-box2 *ngIf="activeTab?.code === 'tab2'"></process-box2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <copyrights></copyrights>
+    </div>
+  </div>
+  <sidebar-menu></sidebar-menu>
+  <div class="clearfix"> </div>
+</div>

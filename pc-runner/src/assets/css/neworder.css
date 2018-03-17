@@ -1,0 +1,271 @@
+.order-box{
+	min-width: 1200px;
+}
+.order-box .order-nav{
+	/* background: url("../images/order_bg.jpg") repeat-x left bottom; */
+}
+.order-form{
+	/* background: #fdfdfd; */
+	overflow: hidden;
+	width:1010px;
+	float:left;
+}
+/*常用*/
+.uuBusi .ucard .tag a.common-address{
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 38px;
+	text-align: center;
+	line-height: 38px;
+	-webkit-border-radius:4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	-ms-border-radius: 4px;
+	border-radius: 4px;
+	behavior:url("http://www.uupt.com/css/js/PIE.htc");
+	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
+	width: 100px;
+    height: 38px;
+	background: #1a1a1a;
+	box-shadow: none;
+	outline: none;
+	border: none;
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: 0.3px;
+	text-align: center;
+	color: #ffa740;
+}
+.common-address:hover{
+	background: #ff8b03 none;
+}
+
+/*特殊要求*/
+.uuBusi .ucard .tag.special a{
+	float: left;
+	width: 95px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 13px;
+	color: #666;
+	text-align: center;
+	background: #F5F5F5;
+	display: inline-block;
+	/*position:relative;*/
+	/*z-index:2;*/
+}
+.uuBusi .ucard .tag.special a.active{
+	background: #ff8b03;
+	color: #fff;
+}
+.uuBusi .ucard .tag.special a:hover{
+	border: none;
+}
+.uuBusi .ucard .tag.special a:first-child{
+	/*border-top-left-radius: 4px;*/
+	/*border-bottom-left-radius: 4px;*/
+	border-radius:4px 0px 0px 4px;
+	/*behavior:url("http://www.uupt.com/css/js/PIE.htc");*/
+	/*-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");*/
+
+}
+.uuBusi .ucard .tag.special a:last-child{
+	/*border-top-right-radius: 4px;*/
+	/*border-bottom-right-radius: 4px;*/
+	border-radius:0px 4px 4px 0px;
+	/*behavior:url("http://www.uupt.com/css/js/PIE.htc");*/
+	/*-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");*/
+}
+.pr35{
+	padding-right: 35px;
+}
+
+/**/
+.line-bar{
+	position: absolute;
+	top: 30px;
+	left: 0;
+	width: 3px;
+	height: 40px;
+	background: #ff8b03;
+	opacity: 0;
+	transition: all ease .4s;
+}
+.uuBusi .infos-box:hover .line-bar,
+.uuPay .infos-box:hover .line-bar{
+	opacity: 1;
+}
+
+/*代收货款*/
+.insteadMoneyCon{
+	position: relative;
+	padding-left: 20px;
+	overflow: hidden;
+}
+.uuBusi .ucard .tag .tips .con.money .symbol{
+	position: absolute;
+	left: 208px;
+}
+.more-bg{
+	margin: 5px auto 0;
+	width: 194px;
+	height: 28px;
+	text-align: center;
+	line-height: 32px;
+	color: #aaa;
+	background: url("../images/more_bg.png") center center no-repeat;
+	display: block;
+	overflow: hidden;
+}
+.more-bg:hover{
+	color: #555;
+}
+.more-content .ucard{
+	/*height: 270px;*/
+	/*display: none;*/
+}
+.more-content{
+  display: none;
+}
+.more-down{
+	width: 10px;
+	height: 10px;
+	background: url("../images/more_down.png") center center no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.more-up{
+	width: 10px;
+	height: 10px;
+	background: url("../images/more_up.png") center center no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.clear{
+	clear: both;
+}
+/*带排队时间选择*/
+.queueTimes{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.queueTimes label{
+	width: 52px;
+	line-height: 38px;
+	padding-right: 50px;
+	text-align: left;
+	float: left;
+	/*box-sizing: border-box;*/
+}
+.queueTimes .timer-box{
+	width: 88%;
+	float: left;
+	box-sizing: border-box;
+}
+.queueTimes .timer-box .timer{
+	position: relative;
+	float: left;
+	width: 95px;
+	display: inline-block;
+}
+.queueTimes .timer-box .timer input{
+	width: 100%;
+}
+.queueTimes .timer-box .timer input:focus{
+	border: solid 1px #e6e6e6;
+}
+.queueTimes .timer-box .timer.time-hour input{
+	border-left: none;
+	border-right: none;
+}
+.queueTimes .timer-box .timer .down-box{
+	position: absolute;
+	top: 43px;
+	left: 0;
+	width: 100%;
+	max-height: 122px;
+	border: solid 1px #e6e6e6;
+	background: #fff;
+	box-sizing: border-box;
+	z-index: 99;
+	overflow:auto;
+	display: none;
+}
+.queueTimes .timer-box .timer .down-box a{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: block;
+}
+.queueTimes .timer-box .timer .down-box a:hover,
+.queueTimes .timer-box .timer .down-box a.selected{
+	background: #eee;
+	color: #333;
+}
+/*历史地址*/
+.history{
+	position: absolute;
+	top: 40px;
+	left: 0;
+	width: 694px;
+	background: #fff;
+	border: solid 1px #ddd;
+	box-sizing: border-box;
+	z-index: 13;
+	display: none;
+}
+.history .tabs-content ul.show{
+	display: block;
+}
+.history .tabs-content ul{
+	overflow: hidden;
+	display: none;
+}
+.history .tabs-content ul li{
+	height: 70px;
+	padding: 19px 16px 19px 40px;
+	background: url("../images/haddress_bg.png") 16px center no-repeat;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.history .tabs-content ul li:hover{
+	background-color: #F5F5F5;
+}
+.history .tabs-content ul li h5{
+	font-size: 13px;
+}
+.history .tabs-content ul li p{
+	line-height: 24px;
+	color: #bcbcbc;
+}
+.history .tabs-nav{
+	overflow: hidden;
+}
+.tag .history .tabs-nav a{
+	width: 50%;
+    display: block;
+    float: left;
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    background: #F5F5F5 none;
+    transition: all ease .4s;
+}
+.tag .history .tabs-nav a:hover,
+.tag .history .tabs-nav a.active{
+	background: #fff none;
+	color: #ff8b03;
+	border:none;
+}
+.tag .history .tabs-nav a:hover:after,
+.tag .history .tabs-nav a.active:after{
+	display: table;
+	content: "";
+	height: 1px;
+	width: 60px;
+	margin: 0 auto;
+	background: #FF8B03;
+}

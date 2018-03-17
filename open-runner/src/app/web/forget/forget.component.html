@@ -1,0 +1,31 @@
+<div class="pageRegister">
+  <header-main></header-main>
+  <div class="con">
+    <div class="inner-block" style="background: #fff; padding: 0;">
+      <div class="main-page-myprofit rechargeCard changePass">
+        <div class="">
+          <div class="main-page-title">
+            <h1>忘记密码</h1>
+          </div>
+          <div class="main-page-body">
+            <div class="form-container">
+              <div class="form-horizontal reform" [formGroup]="form">
+                <div class="form-group row">
+                  <label class="col-md-1 control-label" style="line-height: 44px;">邮箱账号：</label>
+                  <div class="col-md-4">
+                    <input type="text" class="form-control ipt" formControlName="email" placeholder="注册时的邮箱账号">
+                  </div>
+                  <div class="col-md-1">
+                    <button type="button" class="btn btn-mystyle" (click)="forget()">确定</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a routerLink="/web/site/entry/runner_open/login" class="loginBack">返回登录</a>
+      </div>
+    </div>
+  </div>
+  <copyrights></copyrights>
+</div>
