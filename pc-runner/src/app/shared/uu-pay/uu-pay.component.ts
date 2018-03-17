@@ -24,7 +24,7 @@ export class UuPayComponent implements OnInit {
 
   ngOnInit() {
     this.form.valueChanges.subscribe(res=>{
-      console.log(res);
+      // console.log(res);
     });
   }
 

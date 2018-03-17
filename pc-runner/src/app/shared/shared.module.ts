@@ -20,6 +20,7 @@ import { TimeSelectComponent } from './time-select/time-select.component';
 import { PayStep2Component } from './pay-step2/pay-step2.component';
 import { PayStep1Component } from './pay-step1/pay-step1.component';
 import { UuPayComponent } from './uu-pay/uu-pay.component';
+import { We7SrcDirective } from './directives/we7-src.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -44,7 +45,8 @@ import { UuPayComponent } from './uu-pay/uu-pay.component';
     TimeSelectComponent,
     PayStep2Component,
     PayStep1Component,
-    UuPayComponent
+    UuPayComponent,
+    We7SrcDirective,
   ],
   exports: [
     CommonModule,
@@ -64,7 +66,8 @@ import { UuPayComponent } from './uu-pay/uu-pay.component';
     LineTimeComponent,
     QueueTimesComponent,
     TimeSelectComponent,
-    UuPayComponent
+    UuPayComponent,
+    We7SrcDirective
   ]
 })
 export class SharedModule { }

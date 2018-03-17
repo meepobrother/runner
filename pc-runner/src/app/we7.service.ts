@@ -1,8 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class We7Service {
     queryParams: any = {};
+
+    address: any;
+    lat: any;
+    lng: any;
+
+    locChange: Subject<any> = new Subject();
     constructor(
         public router: Router,
     ) {
@@ -76,6 +83,13 @@ export class We7Service {
         }
     }
 
+    guid() {
+        return 'PTxxxxxxxx-xxxx-xxxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
     tip(msg: string) { }
 
     toRegister() {
@@ -91,9 +105,9 @@ export class We7Service {
     }
 
     go(item: any) {
-        if(typeof item === 'string'){
+        if (typeof item === 'string') {
             location.href = item;
-            return ;
+            return;
         }
         const { link } = item;
         if (!link.m || link.m === 'shibida_mfans') {

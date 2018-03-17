@@ -1,168 +1,91 @@
-<div class="order-form">
-  <div>
-    <!--form区域-->
-    <form action="#" method="post">
-      <div class="uuBusi">
-        <div class="infos-box infos-box1" style="z-index: 9;">
-          <div class="ucard" style="margin-bottom:0;">
-            <label>物品类型</label>
-            <div class="tag category" id="sendType">
-            </div>
-          </div>
-          <div class="ucard">
-            <label>取货地址</label>
-            <div class="tag" data-address-y="" data-address-x="">
-              <input type="text" autocomplete="off" class="inp address-infos w86 required" name="startaddress" id="startaddress" value=""
-                placeholder="请填写取货地址" title="取货地址" />
-              <!-- <span class="msg msg4">必填!</span> -->
-              <span class="locate">
-                <i class="iconfont icon-locate"></i>定位</span>
-            </div>
-          </div>
-          <div class="ucard">
-            <label>备注地址</label>
-            <div class="tag">
-              <input type="text" name="startaddressdoor" autocomplete="off" id="startaddressdoor" class="inp w86" placeholder="请填写具体楼号及门牌号"
-                title="备注地址" />
-            </div>
-          </div>
-          <!-- <div class="ucard">
-                      <label>门牌号</label>
-                      <div class="tag">
-                          <input class="inp w100" autocomplete="off" id="startaddressdoor" type="text" placeholder="请填写具体楼号和门牌号" />
-                      </div>
-                  </div> -->
-          <div class="ucard" style="padding-bottom:30px;">
-            <label>取货电话</label>
-            <div class="tag">
-              <input type="tel" autocomplete="off" maxlength="11" class="inp" name="starttel" id="starttel" placeholder="请输入取货人手机号码" style="width: 32%">
-              <span class="msg msg5">必填!</span>
-              <span class="tel msg msg6">手机号码格式不正确!</span>
-              <!-- <input type="text" autocomplete="off" class="inp" name="startname" id="startname" placeholder="请输入取货人姓名" style="width: 24.6%; margin-left: 10px;"> -->
-              <span class="msg msg7">必填!</span>
-            </div>
-          </div>
-          <!-- <div class="line-bar"></div> -->
-        </div>
-        <!-- <div class="infos-box" style="z-index: 8;"> -->
-        <!-- <div class="ucard">
-                  <label>门牌号</label>
-                  <div class="tag">
-                      <input autocomplete="off"  class="inp w100" id="endaddressdoor" type="text" placeholder="请填写具体楼号和门牌号" />
-                  </div>
-              </div> -->
-        <!-- <div class="line-bar"></div> -->
-        <!-- </div> -->
-        <div class="infos-box  infos-box2" style="padding-bottom: 10px;">
-          <div class="ucard">
-            <label>收货地址</label>
-            <div class="tag" data-address-y="" data-address-x="">
-              <input type="text" autocomplete="off" class="inp address-infos w86" name="endaddress" id="endaddress" value="" placeholder="请填写收货地址"
-                title="收货地址" />
-              <!-- <span class="msg msg4">必填!</span> -->
-              <span class="locate">
-                <i class="iconfont icon-locate"></i>定位</span>
-            </div>
-          </div>
-          <div class="ucard">
-            <label>备注地址</label>
-            <div class="tag">
-              <input type="text" name="endaddressdoor" autocomplete="off" id="endaddressdoor" class="inp w86" placeholder="请填写具体楼号及门牌号"
-                title="备注地址" />
-            </div>
-          </div>
-          <div class="ucard">
-            <label>收货电话</label>
-            <div class="tag">
-              <input type="tel" autocomplete="off" maxlength="11" class="inp" name="endtel" id="endtel" placeholder="请输入收货人手机号码" style="width: 32%">
-              <span class="msg msg5">必填!</span>
-              <span class="tel msg msg6">手机号码格式不正确!</span>
-              <span class="msg msg7">必填!</span>
-            </div>
-          </div>
-        </div>
-        <div class="infos-box infos-box3" style="z-index: 7;">
-          <div class="ucard" style="margin-bottom: 0;">
-            <div class="ucard" style="height: 96px;">
-              <label>备注信息</label>
-              <div class="tag" style="padding-bottom:20px;position:relative;">
-                <textarea id="note" autocomplete="off" class="inp w100 textarea-large maxText" type="text" placeholder="请填写物品具体信息"></textarea>
-                <span style="position:absolute;font-size:12px;color:#bbbbbb;right:15px;bottom:18px;z-index:10;">最多80字</span>
-              </div>
-            </div>
-            <div class="ucard" style="line-height:none;">
-              <label>取货时间</label>
-              <div class="tag special help-input send-input" id="sendChoice">
-                <select name="" id="sendTime">
-                  <option value="0">立即取货</option>
-                  <option value="1">预约时间</option>
-                </select>
-                <div class="tips">
-                  <div class="con warn" id="sendTimeWarn" style="display: block;">
-                    <img src="images/help-star.png" alt="tip">跑男接单后立即上门取货</div>
-                  <div class="con money" id="sendTimeInput">
-                    <input class="inp date" autocomplete="off" id="yueDate" data-val="0" type="text" placeholder="选择时间">
-                    <span class="msg msg2 sendTimemsg" style="left: 29.5%;">必填!</span>
-                    <span class="rang rang-d"></span>
-                    <div class="warn" style="line-height: 36px; margin-left: 6px; display: none;" id="subText">
-                      <i class="iconfont icon-warn"></i>
-                      <span>预约时间为上门取货时间，支持30分钟以后24小时以内.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="more-content">
-              <div class="ucard" style="display:none;">
-                <label>物品保价</label>
-                <div class="tag help-input">
-                  <select name="goodsInsurance" id="goodsInsurance">
-                    <option value="0" note="若商品出现损坏，最多可获得30元优惠券赔付" selected>不保价</option>
-                  </select>
-                  <div class="tips" style="float:none;">
-                    <div class="con warn" style="display: block;">
-                      <img src="images/help-star.png" alt="tip">
-                      <span id="goodsInsuranceTips">默认不保价</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="ucard" style="display:none;">
-                <label>物品重量</label>
-                <div class="tag special help-input" id="goodsWeight">
-                  <select name="" id="goodHeavy">
-                    <option value="-2222">-2222</option>
-                  </select>
-                </div>
-              </div>
-              <div class="ucard" style="display:none;">
-                <label>配送工具</label>
-                <div class="tag special help-input" id="transport">
-                  <select name="" id="goodTool">
-                    <option value="0">不限</option>
-                  </select>
-                </div>
-              </div>
-              <div class="ucard" style="margin-bottom: 0px;">
-                <label>特殊要求</label>
-                <div class="tag special help-input" id="specialType" class="help-specialType">
-                  <div>
-                    <input type="checkbox" id="sTemp" class="help-chk" name="specialType">
-                    <label class="help-chk-label" for="sTemp" style="padding-right:0px;">
-                      <span>保温箱</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a href="javascript:;" id="getMore" class="more-bg">
-              <i class="more-down"></i>点击展开更多</a>
-          </div>
+<div class="order-form" [formGroup]="order.form">
+  <div class="uuBusi">
+    <div class="infos-box infos-box1" style="z-index: 9;">
+      <div class="ucard" style="margin-bottom:0;">
+        <label>物品类型</label>
+        <div class="tag category" id="sendType">
         </div>
       </div>
-      <uu-pay></uu-pay>
-      <ewm-pay></ewm-pay>
-    </form>
+      <div class="ucard">
+        <label>取货地址</label>
+        <div class="tag" data-address-y="" data-address-x="">
+          <input type="text" autocomplete="off" class="inp address-infos w86 required" #startaddress formControlName="from_address" id="startaddress" value=""
+            placeholder="请填写取货地址" title="取货地址" />
+          <span class="locate">
+            <i class="iconfont icon-locate"></i>定位</span>
+        </div>
+      </div>
+      <div class="ucard">
+        <label>备注地址</label>
+        <div class="tag">
+          <input type="text" autocomplete="off" formControlName="from_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号" title="备注地址" />
+        </div>
+      </div>
+      <div class="ucard" style="padding-bottom:30px;">
+        <label>取货电话</label>
+        <div class="tag">
+          <input type="tel" autocomplete="off" maxlength="11" class="inp" formControlName="pubusermobile" id="starttel" placeholder="请输入取货人手机号码" style="width: 32%">
+          <span class="msg msg5">必填!</span>
+          <span class="tel msg msg6">手机号码格式不正确!</span>
+          <span class="msg msg7">必填!</span>
+        </div>
+      </div>
+    </div>
+    <div class="infos-box  infos-box2" style="padding-bottom: 10px;">
+      <div class="ucard">
+        <label>收货地址</label>
+        <div class="tag" data-address-y="" data-address-x="">
+          <input type="text" autocomplete="off" class="inp address-infos w86" #endaddress formControlName="to_address" id="endaddress" value="" placeholder="请填写收货地址"
+            title="收货地址" />
+          <span class="locate">
+            <i class="iconfont icon-locate"></i>定位</span>
+        </div>
+      </div>
+      <div class="ucard">
+        <label>备注地址</label>
+        <div class="tag">
+          <input type="text" autocomplete="off" formControlName="to_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号"
+            title="备注地址" />
+        </div>
+      </div>
+      <div class="ucard">
+        <label>收货电话</label>
+        <div class="tag">
+          <input type="tel" autocomplete="off" maxlength="11" class="inp"  fromControlName="receiver_phone" id="endtel" placeholder="请输入收货人手机号码" style="width: 32%">
+          <span class="msg msg5">必填!</span>
+          <span class="tel msg msg6">手机号码格式不正确!</span>
+          <span class="msg msg7">必填!</span>
+        </div>
+      </div>
+    </div>
+    <div class="infos-box infos-box3" style="z-index: 7;">
+      <div class="ucard" style="margin-bottom: 0;">
+        <div class="ucard" style="height: 96px;">
+          <label>备注信息</label>
+          <div class="tag" style="padding-bottom:20px;position:relative;">
+            <textarea id="note" autocomplete="off" formControlName="note" class="inp w100 textarea-large maxText" type="text" placeholder="请填写物品具体信息"></textarea>
+            <span style="position:absolute;font-size:12px;color:#bbbbbb;right:15px;bottom:18px;z-index:10;">最多80字</span>
+          </div>
+        </div>
+        <line-time [form]="order.form" title="取货时间" [hasLong]="false"></line-time>
+        <div class="more-content" *ngIf="showMore" style="display: block;">
+          <div class="ucard" style="margin-bottom: 0px;">
+            <label>特殊要求</label>
+            <div class="tag special help-input" id="specialType" class="help-specialType">
+                <div>
+                    <input type="checkbox" formControlName="special_type" value="1" id="sTemp" class="help-chk">
+                    <label class="help-chk-label" for="sTemp" style="padding-right:0px;">
+                        <span>保温箱</span>
+                    </label>
+                </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:;" (click)="switchMore()" id="getMore" class="more-bg">
+          <i class="more-down"></i>点击展开更多</a>
+      </div>
+    </div>
   </div>
+  <uu-pay [form]="order.form"></uu-pay>
 </div>
 <div style="clear:both;"></div>

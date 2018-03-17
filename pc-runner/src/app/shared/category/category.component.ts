@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'category',
   templateUrl: './category.component.html',
@@ -32,7 +32,15 @@ export class CategoryComponent implements OnInit {
     title: '生鲜',
     id: '8'
   }];
-  constructor() { }
+
+  @Input() form: FormGroup;
+  constructor(
+    public fb: FormBuilder
+  ) { 
+    this.form = this.fb.group({
+      special_type: [0]
+    });
+  }
 
   ngOnInit() {
   }
@@ -42,6 +50,7 @@ export class CategoryComponent implements OnInit {
       res.active = false;
     });
     item.active = true;
+    this.form.get('special_type').setValue(item.id);
   }
 
 }

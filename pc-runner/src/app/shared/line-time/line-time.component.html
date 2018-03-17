@@ -1,5 +1,5 @@
 <div class="ucard" style="line-height:none;" [formGroup]="form" id="lineTimeType">
-  <label>排队时间</label>
+  <label>{{title}}</label>
   <div class="tag special help-input send-input" id="sendChoice">
     <select formControlName="subscribe_type" class="sendTime3">
       <option value="0">立即前往(跑男接单后立即前往排队地点)</option>
@@ -8,4 +8,4 @@
   </div>
 </div>
 <time-select (change)="onTimeChange($event)" *ngIf="showYue"></time-select>
-<queue-times (change)="onTimeLongChange($event)"></queue-times>
+<queue-times *ngIf="hasLong" (change)="onTimeLongChange($event)"></queue-times>

@@ -3,14 +3,26 @@
   "modulename": "Runner_pc",
   "description": "跑腿PC端",
   "title": "跑腿PC端",
-  "version": "1.0.0",
+  "version": "2.0",
   "license": "MIT",
   "author": "imeepos",
-  "menu": [],
+  "menu": [{
+    "title": "帮我买",
+    "do": "buy"
+  },{
+    "title": "帮我送",
+    "do": "send"
+  },{
+    "title": "帮我取",
+    "do": "take"
+  },{
+    "title": "帮排队",
+    "do": "takeorder"
+  }],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build --prod --deploy-url=../addons/runner_pc/template/web/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

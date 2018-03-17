@@ -10,6 +10,9 @@ export class LineTimeComponent implements OnInit {
   @Input() form: FormGroup;
   showYue: boolean = false;
   @Output() change: EventEmitter<any> = new EventEmitter();
+  @Input() hasLong: boolean = true;
+  @Input() title: string = '排队时间';
+  
   constructor(
     public fb: FormBuilder,
     public cd: ChangeDetectorRef

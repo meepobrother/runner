@@ -1,4 +1,4 @@
-<div class="order-form" [formGroup]="form">
+<div class="order-form" [formGroup]="order.form">
     <div class="uuBusi">
         <div class="infos-box infos-box1">
             <div class="ucard" style="margin-bottom: 0;">
@@ -17,7 +17,7 @@
             <div class="ucard">
                 <label>排队地址</label>
                 <div class="tag">
-                    <input class="inp w86 required" autocomplete="off" type="text" formControlName="to_address" id="startaddress" placeholder="请填写排队地址"
+                    <input class="inp w86 required" #searchAddress autocomplete="off" type="text" formControlName="to_address" id="startaddress" placeholder="请填写排队地址"
                         title="排队地址">
                     <span class="locate" style="right: 124px;">
                         <i class="iconfont icon-locate"></i>定位
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="ucard" style="padding-bottom:0px;">
-                <label>联系电话</label>
+                <label>联系姓名</label>
                 <div class="tag">
                     <input type="tel" maxlength="11" autocomplete="off" class="inp" formControlName="receiver" placeholder="请输入联系人姓名" style="width: 32%">
                     <span class="msg msg5">必填!</span>
@@ -49,10 +49,9 @@
             </div>
         </div>
         <div class="infos-box infos-box2" style="z-index: 9;">
-            <line-time [form]="form"></line-time>
+            <line-time [form]="order.form"></line-time>
         </div>
     </div>
-    <uu-pay [form]="form"></uu-pay>
-    <ewm-pay></ewm-pay>
+    <uu-pay [form]="order.form"></uu-pay>
 </div>
 <div style="clear:both;"></div>

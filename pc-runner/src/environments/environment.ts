@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  module: 'runner_pc'
+  module: 'runner_pc',
+  publicPath: './'
 };
