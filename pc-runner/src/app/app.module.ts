@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WebModule } from './web/web.module';
 import { MeepoUrlSerializer } from 'we7-router';
 import { environment } from '../environments/environment';
+import { We7Service } from './we7.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +24,7 @@ import { environment } from '../environments/environment';
   providers: [{
     provide: UrlSerializer,
     useClass: MeepoUrlSerializer
-  }],
+  }, We7Service],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

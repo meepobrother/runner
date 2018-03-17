@@ -160,14 +160,7 @@
           </div>
         </div>
       </div>
-      <div class="uuPay" style="z-index:6;">
-          <div class="infos-box infos-box4" style="margin-top: 0; padding-bottom: 30px;">
-              <pay-step1 *ngIf="!showNext" [form]="form" (onNext)="onNext()"></pay-step1>
-              <pay-step2 *ngIf="showNext" [form]="form"></pay-step2>
-              <div class="map" id="viewmap"></div>
-              <div style="clear: both;"></div>
-          </div>
-      </div>
+      <uu-pay></uu-pay>
       <ewm-pay></ewm-pay>
     </form>
   </div>

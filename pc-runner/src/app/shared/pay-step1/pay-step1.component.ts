@@ -14,7 +14,7 @@ export class PayStep1Component implements OnInit {
     public fb: FormBuilder
   ) {
     this.form = this.fb.group({
-      usermobile: ['']
+      pubusermobile: ['']
     })
   }
 

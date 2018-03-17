@@ -17,7 +17,7 @@
             <div class="ucard">
                 <label>排队地址</label>
                 <div class="tag">
-                    <input class="inp w86 required" autocomplete="off" type="text" formControlName="startaddress" id="startaddress" placeholder="请填写排队地址"
+                    <input class="inp w86 required" autocomplete="off" type="text" formControlName="to_address" id="startaddress" placeholder="请填写排队地址"
                         title="排队地址">
                     <span class="locate" style="right: 124px;">
                         <i class="iconfont icon-locate"></i>定位
@@ -27,14 +27,21 @@
             <div class="ucard">
                 <label>备注地址</label>
                 <div class="tag">
-                    <input type="text" name="startaddressdoor" autocomplete="off" formControlName="startaddressdoor" class="inp w86" placeholder="请填写具体楼号及门牌号"
+                    <input type="text" autocomplete="off" formControlName="to_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号"
                         title="备注地址" />
+                </div>
+            </div>
+            <div class="ucard" style="padding-bottom:0px;">
+                <label>联系电话</label>
+                <div class="tag">
+                    <input type="tel" maxlength="11" autocomplete="off" class="inp" formControlName="receiver" placeholder="请输入联系人姓名" style="width: 32%">
+                    <span class="msg msg5">必填!</span>
                 </div>
             </div>
             <div class="ucard" style="padding-bottom:30px;">
                 <label>联系电话</label>
                 <div class="tag">
-                    <input type="tel" maxlength="11" autocomplete="off" class="inp" formControlName="starttel" id="starttel" placeholder="请输入联系人手机号码" style="width: 32%">
+                    <input type="tel" maxlength="11" autocomplete="off" class="inp" formControlName="receiver_phone" id="starttel" placeholder="请输入联系人手机号码" style="width: 32%">
                     <span class="msg msg5">必填!</span>
                     <span class="tel msg msg6">手机号码格式不正确!</span>
                     <span class="msg msg7">必填!</span>
@@ -45,14 +52,7 @@
             <line-time [form]="form"></line-time>
         </div>
     </div>
-    <div class="uuPay" style="z-index:6;">
-        <div class="infos-box infos-box4" style="margin-top: 0; padding-bottom: 30px;">
-            <pay-step1 *ngIf="!showNext" [form]="form" (onNext)="onNext()"></pay-step1>
-            <pay-step2 *ngIf="showNext" [form]="form"></pay-step2>
-            <div class="map" id="viewmap"></div>
-            <div style="clear: both;"></div>
-        </div>
-    </div>
+    <uu-pay [form]="form"></uu-pay>
     <ewm-pay></ewm-pay>
 </div>
 <div style="clear:both;"></div>

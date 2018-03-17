@@ -19,7 +19,7 @@ import { QueueTimesComponent } from './queue-times/queue-times.component';
 import { TimeSelectComponent } from './time-select/time-select.component';
 import { PayStep2Component } from './pay-step2/pay-step2.component';
 import { PayStep1Component } from './pay-step1/pay-step1.component';
-import { PayWayComponent } from './pay-way/pay-way.component';
+import { UuPayComponent } from './uu-pay/uu-pay.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -44,7 +44,7 @@ import { PayWayComponent } from './pay-way/pay-way.component';
     TimeSelectComponent,
     PayStep2Component,
     PayStep1Component,
-    PayWayComponent
+    UuPayComponent
   ],
   exports: [
     CommonModule,
@@ -63,7 +63,8 @@ import { PayWayComponent } from './pay-way/pay-way.component';
     CategoryComponent,
     LineTimeComponent,
     QueueTimesComponent,
-    TimeSelectComponent
+    TimeSelectComponent,
+    UuPayComponent
   ]
 })
 export class SharedModule { }

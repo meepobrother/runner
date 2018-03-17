@@ -15,31 +15,30 @@ export class LineTimeComponent implements OnInit {
     public cd: ChangeDetectorRef
   ) {
     this.form = this.fb.group({
-      sendTime: [0],
-      yueDate: [],
-      timeLong: [0]
+      subscribe_type: [0],
+      subscribe_time: [],
+      subscribe_time_long: [0]
     });
   }
 
   ngOnInit() {
     this.form.valueChanges.subscribe(res => {
-      if (res.sendTime == 1) {
+      if (res.subscribe_type == 1) {
         this.showYue = true;
       } else {
         this.showYue = false;
       }
       this.cd.markForCheck();
-      console.log(res);
       this.change.emit(this.form.value);
     });
   }
 
   onTimeChange(date: Date) {
-    this.form.get('yueDate').setValue(date.getTime() / 1000);
+    this.form.get('subscribe_time').setValue(date.getTime() / 1000);
   }
 
   onTimeLongChange(time: number) {
-    this.form.get('timeLong').setValue(time);
+    this.form.get('subscribe_time_long').setValue(time);
   }
 
 }
