@@ -6,5 +6,8 @@
 export const environment = {
   production: false,
   module: 'runner_pc',
-  publicPath: './'
+  publicPath: './',
+  c: 'entry',
+  a: 'webapp',
+  path: 'app'
 };

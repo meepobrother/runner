@@ -1,8 +1,10 @@
 <div class="uuPay" style="z-index:6;">
   <div class="infos-box infos-box4" style="margin-top: 0; padding-bottom: 30px;">
-    <pay-step1 *ngIf="!showNext" [form]="form" (onNext)="onNext()"></pay-step1>
-    <pay-step2 *ngIf="showNext" [form]="form"></pay-step2>
-    <div class="map" id="viewmap"></div>
+    
+    <pay-step1 *ngIf="!showNext" [props]="props" [form]="form" (onNext)="onNext()"></pay-step1>
+    <pay-step2 *ngIf="showNext" [props]="props" [form]="form" (onPay)="_onPay()"></pay-step2>
+   
+    <view-map></view-map>
     <div style="clear: both;"></div>
   </div>
 </div>

@@ -22,6 +22,7 @@ class Runner_pcModuleSite extends WeModuleSite
             exit();
         }
     }
+
     public function checkWebDo($do)
     {
         global $_W, $_GPC;
@@ -76,29 +77,92 @@ class Runner_pcModuleSite extends WeModuleSite
         $this->createOpen($_GPC['open']);
     }
 
+    public function systemSetting()
+    {
+        $name = 'runner_pc';
+        $module = pdo_get('modules', array('name' => $name));
+        $data = array();
+        $data['title'] = $module['title'];
+        $data['image'] = IA_ROOT . "/addons/" . $name . "/icon.jpg";
+        $plugins = array();
+        $plugins[] = array(
+            'title' => 'pc入口',
+            'active' => false,
+            'items' => array(
+                array(
+                    'title' => '首页',
+                    'entry' => 'webapp',
+                    'do' => 'index',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '招商加盟',
+                    'entry' => 'webapp',
+                    'do' => 'cooperation',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '服务介绍',
+                    'entry' => 'webapp',
+                    'do' => 'introduction',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '加入跑男',
+                    'entry' => 'webapp',
+                    'do' => 'driver',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '帮我买',
+                    'entry' => 'webapp',
+                    'do' => 'buy',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '帮我送',
+                    'entry' => 'webapp',
+                    'do' => 'send',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '帮我取',
+                    'entry' => 'webapp',
+                    'do' => 'take',
+                    'module' => 'runner_pc',
+                ),
+                array(
+                    'title' => '帮排队',
+                    'entry' => 'webapp',
+                    'do' => 'takeorder',
+                    'module' => 'runner_pc',
+                ),
+            ),
+        );
+        // $plugins[] = array(
+        //     'title' => '手机端',
+        //     'active' => false,
+        //     'items' => $this->getModulesBindings($module['name'], 'cover'),
+        // );
+        $plugins[] = array(
+            'title' => '后台管理',
+            'active' => true,
+            'items' => $this->getModulesBindings($module['name'], 'menu'),
+        );
+        // 获取所有模块
+        $data['plugins'] = $plugins;
+        die(json_encode($data));
+    }
 
-    public function doWebbuy()
+    public function getModulesBindings($name, $entry)
     {
-        global $_W, $_GPC;
-        $this->checkWebDo("buy");
-        include $this->template('web/index');
+        $bindings = pdo_getall('modules_bindings', array('module' => $name, 'entry' => $entry));
+        return $bindings;
     }
-    public function doWebsend()
+    public function getModules($name)
     {
-        global $_W, $_GPC;
-        $this->checkWebDo("send");
-        include $this->template('web/index');
+        $sql = "SELECT * FROM " . tablename('modules') . " WHERE name like '%{$name}%'";
+        return pdo_fetchall($sql, array());
     }
-    public function doWebtake()
-    {
-        global $_W, $_GPC;
-        $this->checkWebDo("take");
-        include $this->template('web/index');
-    }
-    public function doWebtakeorder()
-    {
-        global $_W, $_GPC;
-        $this->checkWebDo("takeorder");
-        include $this->template('web/index');
-    }
+
 }

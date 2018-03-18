@@ -1,0 +1,15 @@
+@font-face {
+    font-family: FontAwesome;
+    src: url(./fonts/fontawesome-webfont.eot?v=4.5.0);
+    src: url(./fonts/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'), url(./fonts/fontawesome-webfont.woff2?v=4.5.0) format('woff2'), url(./fonts/fontawesome-webfont.woff?v=4.5.0) format('woff'), url(./fonts/fontawesome-webfont.ttf?v=4.5.0) format('truetype'), url(./fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format('svg');
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: we7icon;
+    src: url(./fonts/we7icon.eot?ceg6l3);
+    src: url(./fonts/we7icon.eot?ceg6l3#iefix) format("embedded-opentype"), url(./fonts/we7icon.ttf?ceg6l3) format("truetype"), url(./fonts/we7icon.woff?ceg6l3) format("woff"), url(./fonts/we7icon.svg?ceg6l3#we7icon) format("svg");
+    font-weight: 400;
+    font-style: normal
+}

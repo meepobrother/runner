@@ -14,6 +14,7 @@ export class TakeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.order.form.get('send_type').setValue(2);
   }
 
   ngAfterViewInit() {

@@ -7,7 +7,8 @@
 
 html,
 body,
-app-root {
+app-root,
+web-root {
     display: block;
     height: 100%;
 }
@@ -17,7 +18,7 @@ body {
     min-width: 1200px;
 }
 
-web-root {
+.main-content {
     width: 1200px;
     margin: 98px auto 56px;
     display: block;
@@ -29,6 +30,7 @@ web-root {
 @import "assets/css/newstyle.css";
 @import "assets/css/neworder.css";
 @import "assets/css/iconfont.css";
+@import "assets/we7/we7.css";
 .btn-link {
     font-weight: 400;
     background-color: transparent;
@@ -73,4 +75,44 @@ timepicker {
         height: 10px !important;
         background: #ffffff;
     }
+}
+
+pay-step1,
+pay-step2,
+view-map {
+    display: block;
+    overflow: hidden;
+    float: left;
+}
+
+.infos-box {
+    .infos-box4 {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.navigation .nav-wrap .logo {
+    margin-top: 0px !important;
+}
+
+.add-cop-content {
+    width: 1521px !important;
+}
+
+.navbar-left>li {
+    position: relative;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.head .navbar-left>li a {
+    height: auto !important;
+}
+
+.panel-content>.panel-heading {
+    padding: 5px 30px !important;
+    height: 40px !important;
 }

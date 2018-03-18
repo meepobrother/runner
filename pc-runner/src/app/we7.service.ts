@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
+import { environment } from '../environments/environment';
 @Injectable()
 export class We7Service {
     queryParams: any = {};
@@ -40,13 +41,31 @@ export class We7Service {
 
     getMobileUrl(_do: string, _params: any = {}) {
         _params['c'] = 'entry';
-        delete (_params['a']);
+        _params['a'] = 'site';
         _params['i'] = this.get('i') ? this.get('i') : '2';
         return '/app/index.php' + this.getUrl(_do, _params);
     }
 
     getWebUrl(_do: string, _params: any = {}) {
+        _params['c'] = 'site';
+        _params['a'] = 'entry';
         return '/web/index.php' + this.getUrl(_do, _params);
+    }
+
+    getWebAppUrl(_do: string, _params: any = {}) {
+        _params['c'] = 'entry';
+        _params['a'] = 'webapp';
+        return '/app/index.php' + this.getUrl(_do, _params);
+    }
+
+    getApiUrl(_do: string, _params: any = {}) {
+
+    }
+
+    getSystemUrl(_do: string, _params: any = {}) {
+        _params['a'] = environment.a;
+        _params['c'] = environment.c;
+        return `/${environment.path}/index.php${this.getUrl(_do, _params)}`;
     }
 
     serializeQueryParams(params: { [key: string]: any }): string {

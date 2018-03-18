@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -11,6 +11,7 @@ export class UuPayComponent implements OnInit {
   @Input() form: FormGroup;
 
   showNext: boolean = false;
+  @Output() onPay: EventEmitter<any> = new EventEmitter();
   constructor(
     public fb: FormBuilder
   ) { 
@@ -30,6 +31,10 @@ export class UuPayComponent implements OnInit {
 
   onNext(){
     this.showNext = true;
+  }
+
+  _onPay(){
+    this.onPay.next();
   }
 
 }

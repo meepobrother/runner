@@ -1,0 +1,50 @@
+<div class="section top">
+  <div id="homeBanner" class="banner banner-home" style="overflow:hidden;">
+    <div class="video-shadow"></div>
+    <video id="home-video" we7-src="assets/css/movie.mp4" autoplay muted loop></video>
+    <div class="banner-content">
+      <div style="margin:0 auto;position:relative;width:808px;">
+        <div class="slogan">
+            小明跑腿 送的更快 做的更多
+        </div>
+      </div>
+      <div class="banner-content-tt">
+        <div class="locacity locacity-home-btn select-city">
+          <span class="cityname" style="margin-right:8px;">{{we7.address?.city || '定位中...'}}</span>
+          <img we7-src="assets/images/location-icon.png" alt="" style="vertical-align: sub;">
+        </div>
+        <div class="banner-content-rt">
+          <ul id="homeChoiceHelpMethod">
+            <li [class.homeBannerActived]="item.active" (click)="onItem(item)"  *ngFor="let item of order.types" >
+              <span>{{item.title}}</span>
+            </li>
+          </ul>
+          <a id="homeNextStep" href="javascript:;" (click)="addOrder()">立即下单</a>
+        </div>
+      </div>
+    </div>
+    <div class="banner-content-footer" id="bannerFooter">
+      <div class="newSlogan">
+        <img we7-src="assets/images/shield.png" alt="更安全" class="fl">
+        <div class='fr'>
+          <p class="title">更安全</p>
+          <p class="des">跑男公安系统认证 / 独创的编码保温箱 / GPS全程实时追踪</p>
+        </div>
+      </div>
+      <div class="newSlogan" style="margin:0 69px 0 73px;">
+        <img we7-src="assets/images/trophy.png" alt="更专业" class="fl">
+        <div class='fr'>
+          <p class="title">更专业</p>
+          <p class="des">军事化管理体系 / 分类跑男管理制 / 1对1专人服务</p>
+        </div>
+      </div>
+      <div class="newSlogan">
+        <img we7-src="assets/images/quick.png" alt="更快速" class="fl">
+        <div class='fr'>
+          <p class="title">更快速</p>
+          <p class="des">平均16秒响应 / 最快3分钟上门 / 全程59分钟搞定</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

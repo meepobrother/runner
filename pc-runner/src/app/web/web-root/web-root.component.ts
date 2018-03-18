@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 declare const BMAP_STATUS_SUCCESS: any;
+import { OrderService } from '../../order.service';
 import { We7Service } from '../../we7.service';
+import { LoginService } from '../../login.service';
+
 @Component({
   selector: 'web-root',
   templateUrl: './web-root.component.html',
   styleUrls: ['./web-root.component.css']
 })
 export class WebRootComponent implements OnInit {
+  city: string;
   constructor(
-    public we7: We7Service
+    public order: OrderService,
+    public we7: We7Service,
+    public cd: ChangeDetectorRef,
+    public login: LoginService
   ) { }
 
   ngOnInit() {
@@ -19,6 +26,7 @@ export class WebRootComponent implements OnInit {
         that.we7.address = r.address;
         that.we7.lat = r.latitude;
         that.we7.lat = r.longitude;
+        that.city = r.address.city;
         that.we7.locChange.next({
           address: r.address,
           lat: r.latitude,
@@ -28,6 +36,10 @@ export class WebRootComponent implements OnInit {
         alert('failed' + this.getStatus());
       }
     }, { enableHighAccuracy: true })
+  }
+
+  onLogout() {
+    this.login.exit();
   }
 
 }

@@ -4,12 +4,12 @@
       <li class="distance" *ngIf="props.distance">
         <b>订单距离</b>
         <h3>
-          <span class="ShowKm">0</span>公里</h3>
+          <span class="ShowKm">{{form.get('distance').value / 1000}}</span>公里</h3>
       </li>
       <li class="money">
         <b>跑腿费</b>
         <h3>
-          <span class="FreightMoney">0</span>元</h3>
+          <span class="FreightMoney">{{form.get('freight_money').value}}</span>元</h3>
       </li>
     </ul>
   </div>

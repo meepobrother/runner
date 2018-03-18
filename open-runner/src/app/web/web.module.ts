@@ -15,6 +15,13 @@ import { WordshowComponent } from './wordshow/wordshow.component';
 import { SgintokenComponent } from './sgintoken/sgintoken.component';
 import { IndexComponent } from './index/index.component';
 import { ProfilesComponent } from './profiles/profiles.component';
+import { TianqiFeeComponent } from './profiles/tianqi-fee/tianqi-fee.component';
+import { JuliFeeComponent } from './profiles/juli-fee/juli-fee.component';
+import { WeightFeeComponent } from './profiles/weight-fee/weight-fee.component';
+import { TimeFeeComponent } from './profiles/time-fee/time-fee.component';
+import { LouFeeComponent } from './profiles/lou-fee/lou-fee.component';
+import { TimelongFeeComponent } from './profiles/timelong-fee/timelong-fee.component';
+import { BaojiaFeeComponent } from './profiles/baojia-fee/baojia-fee.component';
 
 @NgModule({
   imports: [
@@ -30,7 +37,14 @@ import { ProfilesComponent } from './profiles/profiles.component';
     WordshowComponent,
     SgintokenComponent,
     IndexComponent,
-    ProfilesComponent
+    ProfilesComponent,
+    TianqiFeeComponent,
+    JuliFeeComponent,
+    WeightFeeComponent,
+    TimeFeeComponent,
+    LouFeeComponent,
+    TimelongFeeComponent,
+    BaojiaFeeComponent
   ]
 })
 export class WebModule { }

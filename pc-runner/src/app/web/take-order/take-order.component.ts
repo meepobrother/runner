@@ -12,7 +12,9 @@ export class TakeOrderComponent implements OnInit, AfterViewInit {
   constructor(
     public order: OrderService
   ) { }
-  ngOnInit() { }
+  ngOnInit() { 
+    this.order.form.get('send_type').setValue(3);
+  }
   ngAfterViewInit() {
     this.order.initAuto(this.searchAddress.nativeElement, (address, form) => {
       form.get('to_address').setValue(address);

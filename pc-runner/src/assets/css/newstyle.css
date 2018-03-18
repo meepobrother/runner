@@ -1,8 +1,4 @@
 /*首页 服务平台*/
-@font-face {
-	font-family:"FjallaOne"; 
-	src: url("../fonts/FjallaOne-Regular.otf"),url('http://www.uupt.com/fonts/fjallaone.ttf')
-}
 #wrap,
 body,
 html {
@@ -23,15 +19,6 @@ html {
 .show {
 	display: block;
 }
-/*body{
--moz-user-select: none; 
--webkit-user-select: none; 
--ms-user-select: none; 
--khtml-user-select: none; 
-user-select: none;
-}*/
-
-
 
 /*通用弹框  */
 .sod_select .sod_list{
@@ -68,8 +55,6 @@ user-select: none;
 	-webkit-border-radius:2px;
 	-moz-border-radius:2px;
 	-o-border-radius:2px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	animation: scaleEWei 0.2s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 	-webkit-animation: scaleEWei 0.2s cubic-bezier(0.25, 0.5, 0.5, 0.9);
 	-moz-animation: scaleEWei 0.2s cubic-bezier(0.25, 0.5, 0.5, 0.9);
@@ -368,8 +353,6 @@ user-select: none;
 	-moz-border-radius:4px;
 	-o-border-radius:4px;
 	-webkit-border-radius:4px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");	
 	height:68px;
 }
 .banner-content-tt .banner-content-rt .slideBlock{
@@ -388,8 +371,6 @@ user-select: none;
 	-moz-border-radius:100px;
 	-o-border-radius:100px;
 	-webkit-border-radius:100px;
-	behavior:url("PIE.htc");
-	-ms-behavior: url("PIE.htc");
 }
 .banner-content-tt .banner-content-rt ul{
 	display: inline-block;
@@ -416,8 +397,6 @@ user-select: none;
 	-moz-border-bottom-right-radius:4px;
 	-o-border-bottom-right-radius:4px;
 	-webkit-border-bottom-right-radius:4px; 
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 .banner-content-tt .banner-content-rt li{ 
 	height:40px;
@@ -432,8 +411,6 @@ user-select: none;
 	-moz-border-radius:100px;
 	-o-border-radius:100px;
 	-webkit-border-radius:100px;
-	behavior:url("PIE.htc");
-	-ms-behavior: url("PIE.htc");
 	float:left;
 	cursor: pointer;
 }
@@ -457,8 +434,6 @@ user-select: none;
 	-moz-border-radius:4px;    
 	-webkit-border-radius:4px;
 	border-radius:4px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");	  
 }
 .banner-content-tt .locacity.locacity-home-btn span{
 	font-size:18px;
@@ -943,8 +918,6 @@ user-select: none;
 	-moz-border-radius: 100%;
 	-o-border-radius: 100%;
 	border-radius: 100%;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	-moz-animation: animations 0.8s ease infinite;
 	-webkit-animation: animations 0.8s ease infinite;
 	-o-animation: animations 0.8s ease infinite;
@@ -1032,8 +1005,6 @@ user-select: none;
 	-webkit-box-shadow: 0 0 6px 2px rgba(0,0,0,0.08);
 	-moz-box-shadow: 0 0 6px 2px rgba(0,0,0,0.08);
 	-o-box-shadow: 0 0 6px 2px rgba(0,0,0,0.08);	
-	/* behavior:url("http://www.uupt.com/css/js/PIE.htc");   */
-	/* -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");   */
 }
 .home-modelone li.home-modelone-item h2 span{
 		display:inline-block;
@@ -1910,8 +1881,6 @@ user-select: none;
 	-o-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-moz-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	z-index:9;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc"); 
-    -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc"); 
 }
 
 .uuBusi .infos-box{
@@ -1970,8 +1939,6 @@ user-select: none;
     -moz-border-radius:3px;
     -o-border-radius:3px;
     -webkit-border-radius:3px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-    -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 
 .date{
@@ -2014,8 +1981,6 @@ user-select: none;
 	-o-border-radius: 2px;
 	-ms-border-radius: 2px;
 	border-radius: 2px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	font-size: 13px;
 	color: #333;
 	float: left;
@@ -2091,8 +2056,6 @@ user-select: none;
 	-o-border-radius: 2px;
 	-ms-border-radius: 2px;
 	border-radius: 2px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 .uuBusi .ucard .tag a.selected:after,
 .uuBusi .ucard .tag a:after{
@@ -2202,8 +2165,6 @@ user-select: none;
 	-o-border-radius: 1.8px;
 	-ms-border-radius: 1.8px;
 	border-radius: 1.8px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	background: #cccccc;
 	margin-right:8px;
 }	
@@ -2326,8 +2287,6 @@ user-select: none;
 	-o-border-radius: 4px;
 	-ms-border-radius: 4px;
 	border-radius: 4px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	font-size: 13px;
 }
 
@@ -2376,8 +2335,6 @@ user-select: none;
     -moz-border-radius:100%;
     -o-border-radius:100%;
     -webkit-border-radius:100%;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	margin-right:8px;
 	vertical-align: text-bottom;
 }
@@ -2794,8 +2751,6 @@ user-select: none;
 	-o-border-radius: 4px;
 	-ms-border-radius: 4px;
 	border-radius: 4px;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 
 .show-question .feedback .col-r .feedback-con input,
@@ -3086,8 +3041,6 @@ user-select: none;
 	-ms-box-shadow: 0px 0px 5px #ff8b03;
 	-o-box-shadow: 0px 0px 5px #ff8b03;
 	box-shadow: 0px 0px 5px #ff8b03;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 .ul_1 li .imgBox.on:before{
 	position:absolute;
@@ -3118,8 +3071,6 @@ user-select: none;
 	-ms-box-shadow: 0px 0px 5px #ff8b03;
 	-o-box-shadow: 0px 0px 5px #ff8b03;
 	box-shadow: 0px 0px 5px #ff8b03;
-	behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 @-webkit-keyframes img1 {
 	0%{
@@ -3787,26 +3738,10 @@ user-select: none;
 	width: 477px;
     height: 411px;
 	cursor: pointer;
-	/* background-image:url("../images/lalal1.png"); */
-	/* background:#fafafa; */
-	/* background-repeat: no-repeat; */
-	/* -ms-background-size:80%;
-	-moz-background-size:80%;
-	-o-background-size:80%;
-	-webkit-background-size:80%;
-	background-size:80%;
-	background-position:center; */
-	/* transition:all .5s linear;
-	-o-transition:all .5s linear;
-	-moz-transition:all .5s linear;
-	-webkit-transition:all .5s linear;
-	-ms-transition:all .5s linear; */
 	border-radius: 6px;
     -moz-border-radius:6px;
     -o-border-radius:6px;
     -webkit-border-radius:6px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-    -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	/* opacity: 0.15; */
 	filter:Alpha(opacity=15);
 	background:#999;
@@ -4007,8 +3942,6 @@ user-select: none;
     -moz-border-radius:4px;
     -o-border-radius:4px;
     -webkit-border-radius:4px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-    -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 }
 
 .coop .item .col-left span.noOpacity{
@@ -4823,8 +4756,6 @@ c_1{
     -webkit-box-shadow:0px 5px 5px 0 rgba(2, 2, 2, 0.03);
     -moz-box-shadow:0px 5px 5px 0 rgba(2, 2, 2, 0.03);
     -o-box-shadow: 0px 5px 5px 0 rgba(2, 2, 2, 0.03);
-    /* behavior:url("http://www.uupt.com/css/js/PIE.htc");  */
-    /* -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");  */
 }
 .lf{
 	border-radius:50%;
@@ -5475,9 +5406,6 @@ input.inp1::-webkit-input-placeholder{
 	text-align:left;
 	filter:alpha(opacity=50);
     opacity:0.5;
-    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);/*兼容ie8及以下*/
-     /* behavior:url("http://www.uupt.com/css/js/PIE.htc");  */
-    /* -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");  */
 }
 .intro-business-content li.intro-bus-item ul li{
 	color: #fff;
@@ -5548,8 +5476,6 @@ input.inp1::-webkit-input-placeholder{
     -moz-border-radius:4px;
     -o-border-radius:4px;
     -webkit-border-radius:4px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/.js/PIE.htc");
 	background: #f2f2f2;
 	margin-right:4px;
 	font-size: 13px;
@@ -5747,8 +5673,6 @@ input.inp1::-webkit-input-placeholder{
     -moz-border-radius: 8px;
     -o-border-radius: 8px;
     -webkit-border-radius: 8px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-    -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	background: #e8e8e8;
 	margin-bottom:20px;
 	padding:23px 30px 23px 36px;
@@ -5770,8 +5694,6 @@ input.inp1::-webkit-input-placeholder{
 	-moz-border-radius:4px;
     -o-border-radius:4px;
     -webkit-border-radius:4px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-    -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	border: solid 1px #1a1a1a;
 }
 .run-tsa-title span b{
@@ -5952,12 +5874,6 @@ input.inp1::-webkit-input-placeholder{
 	position:relative;
 	z-index:3;
 	background-color:#fff;
-	/* box-shadow: 0 0 5px 0.1px rgba(238, 223, 220, 0.75);
-    -webkit-box-shadow: 0 0 5px 0.1px rgba(238, 223, 220, 0.75);
-    -moz-box-shadow: 0 0 5px 0.1px rgba(238, 223, 220, 0.75);
-    -o-box-shadow: 0 0 5px 0.1px rgba(238, 223, 220, 0.75); */
-     /* behavior:url("http://www.uupt.com/css/js/PIE.htc");  
-	 -ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");   */
 	padding-left:40px;
 	padding-right:40px;
 	padding-bottom:80px;
@@ -6141,8 +6057,6 @@ h3.uinfo-title2{
 	box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-o-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-moz-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc"); 
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc"); 
 }
 .newdetail-top .newdetail-nav h1{
 	font-size: 16px;
@@ -6172,8 +6086,6 @@ h3.uinfo-title2{
 	box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-o-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-moz-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc"); 
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	padding:0 40px 99px 40px;
 }
 .newdetail-top .newdetail-txt .newdetail-title p {
@@ -6305,7 +6217,6 @@ h3.uinfo-title2{
    	border:none;
    	background:transparent;
     border-radius: none;
-	behavior: url("http://www.uupt.com/css/js/PIE.htc");	
 }
 .subnav .concat-foot ul li p.concat-foot-en{
 	height: 17px;
@@ -6362,8 +6273,6 @@ h3.uinfo-title2{
     -moz-border-radius:3px;
     -o-border-radius:3px;
     -webkit-border-radius:3px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	border:none;
 	margin-bottom:20px;
 	padding:3px 17px;
@@ -6379,8 +6288,6 @@ h3.uinfo-title2{
     -moz-border-radius:3px;
     -o-border-radius:3px;
     -webkit-border-radius:3px;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	margin-bottom:20px;
 }
 .option-content form #feedback_title{	
@@ -6450,8 +6357,6 @@ body.ques-body{
     -moz-border-radius:100%;
     -o-border-radius:100%;
     -webkit-border-radius:100%;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc");
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc");
 	margin-bottom:16px;
 }
 .ques-main .ques-nav li div.ques-user{
@@ -6488,16 +6393,10 @@ body.ques-body{
 	width: 931px;
 	float:left;
 	background: #ffffff;
-	/*box-shadow:0 0 5px 0.1px rgba(238, 223, 220, 0.75);
-    -webkit-box-shadow: 0 0 5px 0.1px rgba(238, 223, 220, 0.75);
-    -moz-box-shadow:0 0 5px 0.1px rgba(238, 223, 220, 0.75);
-    -o-box-shadow: 0 0 5px 0.1px rgba(238, 223, 220, 0.75);*/
 	-webkit-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-o-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-moz-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc"); 
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc"); 
 	padding:0 40px;
 }
 .ques-content .show-question{
@@ -6550,8 +6449,6 @@ body.ques-body{
 	box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-o-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-moz-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc"); 
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc"); 
 	margin-bottom:20px;
 	border:none;
 	padding:0 40px;
@@ -6590,8 +6487,6 @@ body.ques-body{
 	box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-o-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
 	-moz-box-shadow: rgba(0,0,0,.0470588) 0 2px 3px 0;
-    behavior:url("http://www.uupt.com/css/js/PIE.htc"); 
-	-ms-behavior: url("http://www.uupt.com/css/js/PIE.htc"); 
 	color: #666666;
 	font-size: 13px;
   	line-height: 36px;

@@ -4,22 +4,22 @@
       <li class="distance" *ngIf="props.distance">
         <b>订单距离</b>
         <h3>
-          <span class="ShowKm">0</span>公里</h3>
+          <span class="ShowKm">{{form.get('distance').value / 1000}}</span>公里</h3>
       </li>
       <li class="money">
         <b>跑腿费</b>
         <h3>
-          <span class="FreightMoney">0</span>元</h3>
+          <span class="FreightMoney">{{form.get('freight_money').value}}</span>元</h3>
       </li>
       <li class="goodsFei" *ngIf="props.goods">
         <b>商品费</b>
         <h3>
-          <span class="GoodsMoney">0</span>元</h3>
+          <span class="GoodsMoney">{{form.get('goods_price').value}}</span>元</h3>
       </li>
       <li class="money" *ngIf="props.baojia">
         <b>保价费</b>
         <h3>
-          <span class="goodsInsuranceMoney">0</span>元</h3>
+          <span class="goodsInsuranceMoney">{{form.get('goods_insurance_money').value}}</span>元</h3>
       </li>
     </ul>
   </div>
@@ -75,6 +75,7 @@
     </div>
   </div>
   <div class="ucard">
+    <a href="javascript:;" (click)="pay()" class="sub pay-sub">需支付{{form.get('need_paymoney').value}}元，去支付</a>
     <input type="button" (click)="pay()" name="pay-sub" class="sub pay-sub" value="需支付0元，去支付" id="confirmorder" />
   </div>
 </div>

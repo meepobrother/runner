@@ -2,11 +2,81 @@
 
 function getDistanceByLatLng($fromLat, $fromLng, $toLat, $toLng)
 {
-    return 0;
+    $ak = '9BKXcBKYKc4GCH2urrEpnaIb';
+    $sk = 'aPYRttw2VaTlt5kdomGNkiWMMhoRs8Rm';
+    $url = "http://api.map.baidu.com/direction/v2/riding?origin=%s&destination=%s&ak=%s&sn=%s";
+    $uri = '/direction/v2/riding';
+    $origin = "{$fromLat},{$fromLng}";
+    $destination = "{$toLat},{$toLng}";
+    $querystring_arrays = array(
+        'origin' => $origin,
+        'destination' => $destination,
+        'ak' => $ak,
+    );
+    $sn = caculateAKSN($ak, $sk, $uri, $querystring_arrays);
+    $target = sprintf($url, urlencode($origin), urlencode($destination), $ak, $sn);
+    load()->func('communication');
+    $re = ihttp_get($target);
+    $content = json_decode($re['content'], true);
+    if ($content['status'] === 0) {
+        $result = $content['result'];
+        $routes = $result['routes'];
+        if (empty($routes)) {
+            $re['return_msg'] = '没有有效路径';
+            $re['return_code'] = 'fail';
+            die(json_encode($re));
+        }
+        return $routes[0]['distance'];
+    } else {
+        $re['return_msg'] = $content['message'];
+        $re['return_code'] = 'fail';
+        die(json_encode($re));
+    }
+    die(json_encode($content));
+}
+
+function caculateAKSN($ak, $sk, $url, $querystring_arrays, $method = 'GET')
+{
+    if ($method === 'POST') {
+        ksort($querystring_arrays);
+    }
+    $querystring = http_build_query($querystring_arrays);
+    return md5(urlencode($url . '?' . $querystring . $sk));
 }
 
 function getFreightMoney($distance)
 {
+    // 米转公里
+    $distance = $distance / 1000;
+    // setting
+    $setting = array(
+        array(
+            'start' => 0,
+            'end' => 5,
+            'price' => 5,
+        ),
+        array(
+            'start' => 5,
+            'end' => 10,
+            'price' => 15,
+        ),
+        array(
+            'start' => 10,
+            'end' => 20,
+            'price' => 35,
+        ),
+        array(
+            'start' => 20,
+            'end' => 30,
+            'price' => 55,
+        ),
+    );
+
+    foreach ($setting as $set) {
+        if ($distance >= $set['start'] && $distance <= $set['end']) {
+            return $set['price'];
+        }
+    }
     return 0;
 }
 
@@ -115,6 +185,7 @@ function array2url($params)
 function bulidSign($params)
 {
     unset($params['sign']);
+    unset($params['id']);
     ksort($params);
     $string = array2url($params);
     $string = md5($string);

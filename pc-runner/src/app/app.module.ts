@@ -8,26 +8,29 @@ import { MeepoUrlSerializer } from 'we7-router';
 import { environment } from '../environments/environment';
 import { We7Service } from './we7.service';
 import { OrderService } from './order.service';
+import { LoginService } from './login.service';
 import { SharedModule } from './shared/shared.module';
+import { We7Module } from './we7/we7.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([{
-      path: 'web/site/entry/' + environment.module,
+      path: `${environment.path}/${environment.c}/${environment.a}/${environment.module}`,
       loadChildren: 'app/web/web.module#WebModule'
-    }, {
-      path: '**',
-      loadChildren: 'app/web/web.module#WebModule'
+    },{
+      path: `web/site/entry/${environment.module}`,
+      loadChildren: 'app/menu/menu.module#MenuModule'
     }]),
-    SharedModule
+    SharedModule,
+    We7Module.forRoot(environment)
   ],
   providers: [{
     provide: UrlSerializer,
     useClass: MeepoUrlSerializer
-  }, We7Service, OrderService],
+  }, We7Service, OrderService, LoginService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

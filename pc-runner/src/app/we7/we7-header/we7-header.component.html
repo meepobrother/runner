@@ -1,0 +1,35 @@
+<div class="head">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container plugin-head">
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    {{menu.app.title}}
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li [class.active]="item.active" (click)="onItem(item)" *ngFor="let item of menu.navs">
+                        <a href="javascript:;">{{item.title}}</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" dropdown>
+                        <a href="javascript:;" class="dropdown-toggle" dropdownToggle>
+                            <i class="wi wi-user color-gray"></i>
+                            imeepos
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu color-gray" role="menu" *dropdownMenu>
+                            <li *ngFor="let item of menu.nav2s" (click)="onItem(item)" [class.divider]="item.title.length===0">
+                                <a href="javascript:;" *ngIf="item.title.length>0">
+                                    <i [ngClass]="item.icon"></i>
+                                    {{item.title}}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>

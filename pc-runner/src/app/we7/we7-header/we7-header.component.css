@@ -1,0 +1,8 @@
+.dropdown>a {
+    width: 130px;
+}
+
+.navbar-brand {
+    font-size: 20px !important;
+    line-height: 35px !important;
+}

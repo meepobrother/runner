@@ -9,23 +9,27 @@ export class OrderNavComponent implements OnInit {
   list: any[] = [{
     title: '帮我买',
     icon: 'icon-mai',
-    link: ['/web/site/entry', environment.module, 'buy']
+    link: this.getLink('buy')
   }, {
     title: '帮我送',
     icon: 'icon-song',
-    link: ['/web/site/entry', environment.module, 'send']
+    link: this.getLink('send')
   }, {
     title: '帮我取',
     icon: 'icon-qu',
-    link: ['/web/site/entry', environment.module, 'take']
+    link: this.getLink('take')
   }, {
     title: '代排队',
     icon: 'icon-paidui',
-    link: ['/web/site/entry', environment.module, 'takeorder']
+    link: this.getLink('takeorder')
   }];
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getLink(_do: string) {
+    return ['/', environment.path, environment.c, environment.a, environment.module, _do];
   }
 
 }

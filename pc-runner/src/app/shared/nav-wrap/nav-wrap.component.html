@@ -1,0 +1,38 @@
+<div class="navigation animated">
+    <div class="nav-wrap">
+        <h1 class="logo">
+            <a href="javascript:;" [routerLink]="getLink('index')">
+                {{title}}
+            </a>
+        </h1>
+        <div class="nav">
+            <ul class="nav-list clearfix">
+                <li *ngFor="let item of list" [routerLink]="item.link" routerLinkActive="active">
+                    <a href="javascript:;">{{item.title}}</a>
+                </li>
+            </ul>
+            <div style="clear:both;"></div>
+        </div>
+        <div class="button-group">
+            <ul id="nologin" class="button-list">
+                <li class="nav-header-city select-city">
+                    <span id="selectCity" class="cityname">{{city || '定位中...'}}</span>
+                    <img we7-src="assets/images/header-map-icon.png" alt="map">
+                </li>
+            </ul>
+            <ul class="button-list welcome" id="userinfo" style="display: block;" *ngIf="mobile" >
+                <li>
+                    <a href="javascript:;" class="port fl">
+                        <img src="assets/images/port.png" width="26" height="26" alt="UU用户" />
+                    </a>
+                    <p class="username fl">欢迎您，
+                        <span id="userMobile">{{mobile}}</span>
+                    </p>
+                </li>
+                <li>
+                    <a class="loginout" href="javascript:;" (click)="logout()">退出</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px;
+    color: #fff;
+    background: none;
+    a {
+        color: #fff;
+        font-size: 18px;
+    }
+}

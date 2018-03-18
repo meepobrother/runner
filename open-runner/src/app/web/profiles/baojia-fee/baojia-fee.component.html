@@ -1,0 +1,9 @@
+<div class="item-container" [formGroup]="form">
+  <div *ngFor="let item of form.controls;index as i;">
+    <div [formGroupName]="i">
+      <input type="text" formControlName="title" placeholder="请输入保价类目标题">
+      <input type="text" formControlName="price" placeholder="请输入保价价格">
+    </div>
+  </div>
+  <a href="javascript:;" (click)="add()" class="btn btn-default btn-sm">添加保价收费项目</a>
+</div>

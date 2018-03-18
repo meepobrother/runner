@@ -1,0 +1,41 @@
+<div data-skin="default" class="skin-default  main-lg-body">
+    <we7-header></we7-header>
+    <system-tips *ngIf="menu.msg" (onClose)="closeMsg()"></system-tips>
+    <div class="main">
+        <div class="container">
+            <div style="border: none;" class="panel panel-content main-panel-content panel-content-plugin">
+                <div class="content-head panel-heading main-panel-heading">
+                    <img [src]="menu.app.logo" class="head-app-logo">
+                    <span class="font-lg">{{menu.app.title}}</span>
+                    <div class="pull-right related-info module-related-info">
+                        <span class="top-view">
+                            <a href="javascript:;">
+                                {{menu.account.title}}
+                            </a>
+                        </span>
+                        <span class="dropdown">
+                            <a href="javascript:;" class="dropdown-icon" data-toggle="dropdown" aria-expanded="false">
+                                <i class="wi wi-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li *ngFor="let item of menu.accounts">
+                                    <a href="javascript:;">
+                                        <span>
+                                            {{item.title}}
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body clearfix main-panel-body menu-fixed" style="margin: 0px;padding: 0px;">
+                <left-menu></left-menu>
+                <div class="right-content">
+                    <ng-content></ng-content>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

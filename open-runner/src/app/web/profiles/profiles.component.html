@@ -7,9 +7,35 @@
           <div class="main-page-box">
             <div class="main-page-body">
               <ul>
-                <li>appid: {{info.appid}}</li>
-                <li>appkey: <span *ngIf="showKey">{{info.appkey}}</span><a (click)="showKey = !showKey">查看</a></li>
+                <li>appid: {{info?.appid}}</li>
+                <li>appkey:
+                  <span *ngIf="showKey">{{info?.appkey}}</span>
+                  <a (click)="showKey = !showKey">查看</a>
+                </li>
               </ul>
+
+              <!-- // 计价规则设置 -->
+              <div [formGroup]="form">
+                <div class="item-container">
+                  <a href="javascript:;" class="btn btn-default  btn-sm">添加其他收费项目</a>
+                </div>
+                <div class="item-container">
+                  <a href="javascript:;" class="btn btn-default btn-sm">添加距离收费项目</a>
+                </div>
+                <div class="item-container">
+                  <a href="javascript:;" class="btn btn-default btn-sm">添加重量收费项目</a>
+                </div>
+                <div class="item-container">
+                  <a href="javascript:;" class="btn btn-default btn-sm">添加时间收费项目</a>
+                </div>
+                <div class="item-container">
+                  <a href="javascript:;" class="btn btn-default btn-sm">添加楼层收费项目</a>
+                </div>
+                <div class="item-container">
+                  <a href="javascript:;" class="btn btn-default btn-sm">添加排队时长收费项目</a>
+                </div>
+                <app-baojia-fee></app-baojia-fee>
+              </div>
             </div>
           </div>
         </div>

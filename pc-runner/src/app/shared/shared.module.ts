@@ -21,6 +21,8 @@ import { PayStep2Component } from './pay-step2/pay-step2.component';
 import { PayStep1Component } from './pay-step1/pay-step1.component';
 import { UuPayComponent } from './uu-pay/uu-pay.component';
 import { We7SrcDirective } from './directives/we7-src.directive';
+import { NavWrapComponent } from './nav-wrap/nav-wrap.component';
+import { ViewMapComponent } from './view-map/view-map.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -47,6 +49,8 @@ import { We7SrcDirective } from './directives/we7-src.directive';
     PayStep1Component,
     UuPayComponent,
     We7SrcDirective,
+    NavWrapComponent,
+    ViewMapComponent,
   ],
   exports: [
     CommonModule,
@@ -67,7 +71,8 @@ import { We7SrcDirective } from './directives/we7-src.directive';
     QueueTimesComponent,
     TimeSelectComponent,
     UuPayComponent,
-    We7SrcDirective
+    We7SrcDirective,
+    NavWrapComponent
   ]
 })
 export class SharedModule { }

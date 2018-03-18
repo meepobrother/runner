@@ -1,0 +1,26 @@
+<div class="left-menu">
+  <div class="plugin-menu clearfix">
+    <div class="plugin-menu-main pull-left">
+      <ul class="list-group">
+        <li class="list-group-item" (click)="setItem(item)" [class.active]="item.active" *ngFor="let item of menu.plugins">
+          <a href="javascript:;">
+            <div>{{item.title}}</div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="plugin-menu-sub pull-left">
+      <div class="panel panel-menu">
+        <ul class="list-group panel-collapse">
+          <ng-container *ngFor="let item of menu.activeItem?.items">
+            <li class="list-group-item" (click)="onMenu(item)">
+              <a href="javascript:;" class="text-over">
+                {{item.title}}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit,ElementRef,ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { OrderService } from '../../order.service';
 
 @Component({
@@ -9,12 +9,15 @@ import { OrderService } from '../../order.service';
 export class BuyComponent implements OnInit {
   @ViewChild('endaddress') endaddress: ElementRef;
   @ViewChild('startaddress') startaddress: ElementRef;
-  
+
   constructor(
     public order: OrderService
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
+    this.order.form.get('send_type').setValue(1);
   }
 
   ngAfterViewInit() {

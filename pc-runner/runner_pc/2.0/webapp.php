@@ -14,5 +14,5 @@ class Runner_pcModuleWebapp extends WeModuleWebapp {
 		$message = '返回消息';
 		$data = array();
 		return $this->result($errno, $message, $data);
-	}
+    }
 }

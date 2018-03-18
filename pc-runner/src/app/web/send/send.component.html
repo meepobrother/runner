@@ -1,111 +1,117 @@
-<div class="order-form" [formGroup]="order.form">
-    <div class="uuBusi">
-        <div class="infos-box infos-box1" style="z-index: 9;">
-            <div class="ucard" style="margin-bottom: 0;">
-                <label>物品类型</label>
-                <div class="tag category" id="sendType">
-                    <a href="javascript:;" data-val="1" class="selected">普通</a>
-                </div>
-            </div>
-            <div class="ucard">
-                <label>发货地址</label>
-                <div class="tag" data-address-y="" data-address-x="">
-                    <input type="text" class="inp address-infos w86 required" #startaddress formControlName="from_address" id="startaddress"
-                        autocomplete="off" value="" placeholder="请填写发货地址" title="发货地址" />
-                    <span class="locate">
-                        <i class="iconfont icon-locate"></i>定位</span>
-                </div>
-            </div>
-            <div class="ucard">
-                <label>备注地址</label>
-                <div class="tag">
-                    <input type="text" name="startaddressdoor" autocomplete="off" formControlName="from_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号"
-                        title="备注地址" />
-                </div>
-            </div>
-            <div class="ucard" style="padding-bottom:30px;">
-                <label>发货电话</label>
-                <div class="tag">
-                    <input type="tel" maxlength="11" class="inp" formControlName="pubusermobile" id="starttel" autocomplete="off" placeholder="请输入发货人手机号码"
-                        style="width: 32%">
-                    <span class="msg msg5">必填!</span>
-                    <span class="tel msg msg6">手机号码格式不正确!</span>
-                    <span class="msg msg7">必填!</span>
-                </div>
-            </div>
-        </div>
-        <div class="infos-box  infos-box2" style="padding-bottom: 10px;">
-            <div class="ucard">
-                <label>收货地址</label>
-                <div class="tag" data-address-y="" data-address-x="">
-                    <input type="text" class="inp address-infos w86" #endaddress formControlName="to_address" id="endaddress" autocomplete="off"
-                        value="" placeholder="请填写收货地址" title="收货地址" />
-                    <span class="locate">
-                        <i class="iconfont icon-locate"></i>定位</span>
-                </div>
-            </div>
-            <div class="ucard">
-                <label>备注地址</label>
-                <div class="tag">
-                    <input type="text" name="endaddressdoor" autocomplete="off" formControlName="to_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号"
-                        title="备注地址" />
-                </div>
-            </div>
-            <div class="ucard">
-                <label>收货电话</label>
-                <div class="tag">
-                    <input type="tel" maxlength="11" class="inp" formControlName="receiver_phone" id="endtel" autocomplete="off" placeholder="请输入收货人手机号码"
-                        style="width: 32%">
-                    <span class="msg msg5">必填!</span>
-                    <span class="tel msg msg6">手机号码格式不正确!</span>
-                    <span class="msg msg7">必填!</span>
-                </div>
-            </div>
-        </div>
-        <div class="infos-box  infos-box3" style="padding-bottom: 0;z-index:7;">
-            <div class="ucard" style="margin-bottom:20px;">
-                <label>备注留言</label>
-                <div class="tag" style="position:relative;">
-                    <textarea id="note" autocomplete="off" formControlName="note" class="inp w100 textarea-large maxText" type="text" placeholder="请填写物品具体信息"></textarea>
-                    <span style="position:absolute;font-size:12px;color:#bbbbbb;right:15px;bottom:0px;z-index:10;">最多80字</span>
-                </div>
-            </div>
-            <line-time [form]="order.form" [hasLong]="false" title="发货时间"></line-time>
-            <div class="ucard" style="margin-bottom: 0;">
-                <div class="more-content" *ngIf="showMore" style="display: block;">
-                    <div class="ucard">
-                        <label>商品重量</label>
-                        <div class="tag special help-input" id="goodsWeight">
-                            <select name="" id="goodHeavy" formControlName="goods_weight">
-                                <option value="-">未知重量</option>
-                                <option value="5">5公斤内</option>
-                                <option value="10">10公斤内</option>
-                                <option value="20">20公斤内</option>
-                                <option value="30">30公斤内</option>
-                                <option value="40">40公斤内</option>
-                                <option value="50">50公斤内</option>
-                                <option value="60">60公斤内</option>
-                            </select>
-                        </div>
+<div class="tip" *ngIf="order.error_msg.length>0">
+    {{order.error_msg}}
+</div>
+<div class="main-content">
+    <order-nav></order-nav>
+    <div class="order-form" [formGroup]="order.form">
+        <div class="uuBusi">
+            <div class="infos-box infos-box1" style="z-index: 9;">
+                <div class="ucard" style="margin-bottom: 0;">
+                    <label>物品类型</label>
+                    <div class="tag category" id="sendType">
+                        <a href="javascript:;" data-val="1" class="selected">普通</a>
                     </div>
-                    <div class="ucard" style="margin-bottom: 0px;">
-                        <label>特殊要求</label>
-                        <div class="tag special help-input" id="specialType" class="help-specialType">
-                            <div>
-                                <input type="checkbox" formControlName="special_type" value="1" id="sTemp" class="help-chk">
-                                <label class="help-chk-label" for="sTemp" style="padding-right:0px;">
-                                    <span>保温箱</span>
-                                </label>
+                </div>
+                <div class="ucard">
+                    <label>发货地址</label>
+                    <div class="tag" data-address-y="" data-address-x="">
+                        <input type="text" class="inp address-infos w86 required" #startaddress formControlName="from_address" id="startaddress"
+                            autocomplete="off" value="" placeholder="请填写发货地址" title="发货地址" />
+                        <span class="locate">
+                            <i class="iconfont icon-locate"></i>定位</span>
+                    </div>
+                </div>
+                <div class="ucard">
+                    <label>备注地址</label>
+                    <div class="tag">
+                        <input type="text" name="startaddressdoor" autocomplete="off" formControlName="from_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号"
+                            title="备注地址" />
+                    </div>
+                </div>
+                <div class="ucard" style="padding-bottom:30px;">
+                    <label>发货电话</label>
+                    <div class="tag">
+                        <input type="tel" maxlength="11" class="inp" formControlName="pubusermobile" id="starttel" autocomplete="off" placeholder="请输入发货人手机号码"
+                            style="width: 32%">
+                        <span class="msg msg5">必填!</span>
+                        <span class="tel msg msg6">手机号码格式不正确!</span>
+                        <span class="msg msg7">必填!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="infos-box  infos-box2" style="padding-bottom: 10px;">
+                <div class="ucard">
+                    <label>收货地址</label>
+                    <div class="tag" data-address-y="" data-address-x="">
+                        <input type="text" class="inp address-infos w86" #endaddress formControlName="to_address" id="endaddress" autocomplete="off"
+                            value="" placeholder="请填写收货地址" title="收货地址" />
+                        <span class="locate">
+                            <i class="iconfont icon-locate"></i>定位</span>
+                    </div>
+                </div>
+                <div class="ucard">
+                    <label>备注地址</label>
+                    <div class="tag">
+                        <input type="text" name="endaddressdoor" autocomplete="off" formControlName="to_usernote" class="inp w86" placeholder="请填写具体楼号及门牌号"
+                            title="备注地址" />
+                    </div>
+                </div>
+                <div class="ucard">
+                    <label>收货电话</label>
+                    <div class="tag">
+                        <input type="tel" maxlength="11" class="inp" formControlName="receiver_phone" id="endtel" autocomplete="off" placeholder="请输入收货人手机号码"
+                            style="width: 32%">
+                        <span class="msg msg5">必填!</span>
+                        <span class="tel msg msg6">手机号码格式不正确!</span>
+                        <span class="msg msg7">必填!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="infos-box  infos-box3" style="padding-bottom: 0;z-index:7;">
+                <div class="ucard" style="margin-bottom:20px;">
+                    <label>备注留言</label>
+                    <div class="tag" style="position:relative;">
+                        <textarea id="note" autocomplete="off" formControlName="note" class="inp w100 textarea-large maxText" type="text" placeholder="请填写物品具体信息"></textarea>
+                        <span style="position:absolute;font-size:12px;color:#bbbbbb;right:15px;bottom:0px;z-index:10;">最多80字</span>
+                    </div>
+                </div>
+                <line-time [form]="order.form" [hasLong]="false" title="发货时间"></line-time>
+                <div class="ucard" style="margin-bottom: 0;">
+                    <div class="more-content" *ngIf="showMore" style="display: block;">
+                        <div class="ucard">
+                            <label>商品重量</label>
+                            <div class="tag special help-input" id="goodsWeight">
+                                <select name="" id="goodHeavy" formControlName="goods_weight">
+                                    <option value="-">未知重量</option>
+                                    <option value="5">5公斤内</option>
+                                    <option value="10">10公斤内</option>
+                                    <option value="20">20公斤内</option>
+                                    <option value="30">30公斤内</option>
+                                    <option value="40">40公斤内</option>
+                                    <option value="50">50公斤内</option>
+                                    <option value="60">60公斤内</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ucard" style="margin-bottom: 0px;">
+                            <label>特殊要求</label>
+                            <div class="tag special help-input" id="specialType" class="help-specialType">
+                                <div>
+                                    <input type="checkbox" formControlName="special_type" value="1" id="sTemp" class="help-chk">
+                                    <label class="help-chk-label" for="sTemp" style="padding-right:0px;">
+                                        <span>保温箱</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <a href="javascript:;" (click)="switchMore()" id="getMore" class="more-bg">
+                        <i class="more-down"></i>点击展开更多
+                    </a>
                 </div>
-                <a href="javascript:;" (click)="switchMore()" id="getMore" class="more-bg">
-                    <i class="more-down"></i>点击展开更多
-                </a>
             </div>
         </div>
+        <uu-pay [form]="order.form" [props]="{distance: true}" (onPay)="order.addOrder()"></uu-pay>
     </div>
-    <uu-pay [form]="order.form"></uu-pay>
+    <div style="clear:both;"></div>
 </div>
-<div style="clear:both;"></div>

@@ -324,13 +324,11 @@ html {
 }
 
 .ewm-ios {
-	/*background: url("../images/ewm_ios.png") center center no-repeat;*/
 	background: url("../images/ewm_uupt.png") center center no-repeat;
 	background-size: 100%;
 }
 
 .ewm-android {
-	/*background: url("../images/ewm_android.png") center center no-repeat;*/
 	background: url("../images/ewm_uupt.png") center center no-repeat;
 	background-size: 100%;
 }

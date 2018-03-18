@@ -14,6 +14,7 @@ export class SendComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.order.form.get('send_type').setValue(0);
   }
 
   ngAfterViewInit() {

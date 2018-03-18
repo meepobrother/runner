@@ -6,23 +6,28 @@
   "version": "2.0",
   "license": "MIT",
   "author": "imeepos",
-  "menu": [{
-    "title": "帮我买",
-    "do": "buy"
-  },{
-    "title": "帮我送",
-    "do": "send"
-  },{
-    "title": "帮我取",
-    "do": "take"
-  },{
-    "title": "帮排队",
-    "do": "takeorder"
-  }],
+  "menu": [
+    {
+      "title": "帮我买",
+      "do": "buy"
+    },
+    {
+      "title": "帮我送",
+      "do": "send"
+    },
+    {
+      "title": "帮我取",
+      "do": "take"
+    },
+    {
+      "title": "帮排队",
+      "do": "takeorder"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --deploy-url=../addons/runner_pc/template/web/",
+    "build": "ng build --prod --deploy-url=../addons/runner_pc/template/mobile/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
