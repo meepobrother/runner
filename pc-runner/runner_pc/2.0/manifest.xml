@@ -3,7 +3,7 @@
 	<application setting="false">
 		<name><![CDATA[跑腿PC端]]></name>
 		<identifie><![CDATA[runner_pc]]></identifie>
-		<version><![CDATA[2.0]]></version>
+		<version><![CDATA[2.1]]></version>
 		<type><![CDATA[business]]></type>
 		<ability><![CDATA[跑腿PC端]]></ability>
 		<description><![CDATA[跑腿PC端]]></description>
@@ -25,14 +25,18 @@
 		</supports>
 	</platform>
 	<bindings>
-		<cover>
-		</cover>
-		<menu>
-			<entry title="帮我买" do="buy" state="" direct="" />
-			<entry title="帮我送" do="send" state="" direct="" />
-			<entry title="帮我取" do="take" state="" direct="" />
-			<entry title="帮排队" do="takeorder" state="" direct="" />
-		</menu>
+		<cover></cover>
+		<menu></menu>
+		<system_welcome>
+			<entry title="首页" do="index" state="" direct="false" />
+		</system_welcome>
+		<webapp>
+			<entry title="首页" do="index" state="" direct="true" />
+			<entry title="帮我买" do="buy" state="" direct="true" />
+			<entry title="帮我送" do="send" state="" direct="true" />
+			<entry title="帮我取" do="take" state="" direct="true" />
+			<entry title="帮排队" do="takeorder" state="" direct="true" />
+		</webapp>
 	</bindings>
 	<permissions></permissions>
 	<install><![CDATA[install.php]]></install>
