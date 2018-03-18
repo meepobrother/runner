@@ -20,6 +20,8 @@
 		<card embed="false" />
 		<supports>
 			<item type="app" />
+			<item type="webapp" />
+			<item type="system_welcome" />
 		</supports>
 	</platform>
 	<bindings>
