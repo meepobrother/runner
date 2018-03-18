@@ -49,7 +49,6 @@ $data['coupon_id'] = $input['coupon_id'] > 0 ? $input['coupon_id'] : 0;
 // 订单小类 0帮我送(默认) 1帮我买
 $data['send_type'] = empty($input['send_type']) ? $input['send_type'] : 0;
 
-
 // uid or openid
 $data['openid'] = $input['openid'];
 $data['openid'] = $data['openid'] ? $data['openid'] : $_W['member']['uid'];
@@ -78,8 +77,6 @@ if (empty($data['to_lat']) || empty($data['to_lng']) || empty($data['from_lat'])
 // 校验签名
 $data['nonce_str'] = random(16, false);
 $data['timestamp'] = time();
-$sign = bulidSign($data);
-$data['sign'] = $sign;
 
 // 根据经纬度 计算距离
 $distance = getDistanceByLatLng($data['from_lat'], $data['from_lng'], $data['to_lat'], $data['to_lng']);
@@ -90,36 +87,48 @@ $total_money = $freight_money;
 $total_priceoff = 0;
 $need_paymoney = $total_money;
 // 获取优惠券信息
-load()->model('activity');
-$coupon_info = pdo_get('coupon', array('uniacid' => $_W['uniacid'], 'id' => $input['coupon_id']));
-if (empty($coupon_info)) {
-    $return['return_msg'] = '不存在此卡券';
-    $return['return_code'] = 'fail';
-    die(json_encode($return));
-} else {
-    $extra = iunserializer($coupon_info['extra']);
-    if ($coupon_info['type'] == COUPON_TYPE_DISCOUNT) {
-        // 折扣券
-        $need_paymoney = sprintf("%.2f", ($total_money * ($extra['discount'] / 100)));
-        // 优惠金额
-        $total_priceoff = $total_money - $need_paymoney;
-    } elseif ($coupon_info['type'] == COUPON_TYPE_CASH) {
-        // 现金券
-        if ($log['fee'] >= $extra['least_cost'] * 0.01) {
-            $need_paymoney = sprintf("%.2f", ($total_money - $extra['reduce_cost'] / 100));
+if ($input['coupon_id'] > 0) {
+    load()->model('activity');
+    $coupon_info = pdo_get('coupon', array('uniacid' => $_W['uniacid'], 'id' => $input['coupon_id']));
+    if (!empty($coupon_info)) {
+        $extra = iunserializer($coupon_info['extra']);
+        if ($coupon_info['type'] == COUPON_TYPE_DISCOUNT) {
+            // 折扣券
+            $need_paymoney = sprintf("%.2f", ($total_money * ($extra['discount'] / 100)));
             // 优惠金额
             $total_priceoff = $total_money - $need_paymoney;
+        } elseif ($coupon_info['type'] == COUPON_TYPE_CASH) {
+            // 现金券
+            if ($log['fee'] >= $extra['least_cost'] * 0.01) {
+                $need_paymoney = sprintf("%.2f", ($total_money - $extra['reduce_cost'] / 100));
+                // 优惠金额
+                $total_priceoff = $total_money - $need_paymoney;
+            }
         }
     }
+
+    $hisCoupons = getUserCoupon($input['openid']);
+    $return = array();
+    if (!hasOwnCoupon($hisCoupons, $input['coupon_id'])) {
+        $return['return_msg'] = '所选优惠券有误';
+        $return['return_code'] = 'fail';
+        die(json_encode($return));
+    }
+}
+// 下单中的sign
+
+if (empty($input['sign'])) {
+    $sign = bulidSign($data);
+    $data['sign'] = $sign;
+    // 插入订单
+    $data['status'] = -1;
+} else {
+    $item = pdo_get('runner_open_tasks', array('sign' => $item['sign']));
+    $data['sign'] = $item['sign'];
+    $data['status'] = -1;
 }
 
-$hisCoupons = getUserCoupon($input['openid']);
-$return = array();
-if (!hasOwnCoupon($hisCoupons, $input['coupon_id'])) {
-    $return['return_msg'] = '所选优惠券有误';
-    $return['return_code'] = 'fail';
-    die(json_encode($return));
-}
+// 返回数据
 $return['origin_id'] = $input['origin_id'];
 $return['price_token'] = md5(serialize($data));
 // 订单总金额（优惠前）
@@ -131,7 +140,7 @@ $return['total_priceoff'] = $total_priceoff;
 // 配送距离（单位：米）
 $return['distance'] = $distance;
 // 跑腿费
-$return['freight_money'] = $freight_money;
+$return['freight_money'] = 7689;
 // 优惠券
 $return['couponid'] = $input['coupon_id'];
 // 优惠券金额
@@ -145,7 +154,7 @@ $return['expires_in'] = time() + 60 * 60 * 10;
 // 随机字符串
 $return['nonce_str'] = ramdom(16, false);
 // 签名
-$return['sign'] = bulidSign($data);
+$return['sign'] = $sign;
 $return['appid'] = $input['appid'];
 
 die(json_encode($return));

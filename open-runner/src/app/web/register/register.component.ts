@@ -30,9 +30,12 @@ export class RegisterComponent implements OnInit {
 
   post() {
     let url = this.we7.getWebUrl('open', { open: 'register' });
-    this.http.post(url, this.form.value).subscribe(res => {
-      alert('注册成功');
-      this.router.navigate(['/web/site/entry/' + this.module + '/login']);
+    this.http.post(url, this.form.value).subscribe((res: any) => {
+      if (res.code === -1) {
+        alert(res.msg);
+      } else {
+        this.router.navigate(['/web/site/entry/' + this.module + '/login']);
+      }
     });
   }
 

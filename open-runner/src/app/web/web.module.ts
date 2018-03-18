@@ -13,6 +13,8 @@ import { ProcessComponent } from './process/process.component';
 import { SharedModule } from '../shared/shared.module';
 import { WordshowComponent } from './wordshow/wordshow.component';
 import { SgintokenComponent } from './sgintoken/sgintoken.component';
+import { IndexComponent } from './index/index.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 @NgModule({
   imports: [
@@ -26,7 +28,9 @@ import { SgintokenComponent } from './sgintoken/sgintoken.component';
     ErrorcodeComponent, DemoComponent,
     ProcessComponent,
     WordshowComponent,
-    SgintokenComponent
+    SgintokenComponent,
+    IndexComponent,
+    ProfilesComponent
   ]
 })
 export class WebModule { }

@@ -4,7 +4,7 @@ import { We7Service } from '../../we7.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
-
+import { SidebarService } from '../../themes/sidebar.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit {
     public fb: FormBuilder,
     public we7: We7Service,
     public http: HttpClient,
-    public router: Router
+    public router: Router,
+    public sidebar: SidebarService
   ) {
     this.form = this.fb.group({
       email: '',
@@ -72,10 +73,15 @@ export class LoginComponent implements OnInit {
 
   login() {
     let url = this.we7.getWebUrl('open', { open: 'login' });
-    this.http.post(url, this.form.value).subscribe(res => {
-      console.log(res);
-      alert('登录成功');
-      this.router.navigate(['/web/site/entry/' + this.module + '/index']);
+    this.http.post(url, this.form.value).subscribe((res: any) => {
+      if (res.code === -1) {
+        alert(res.msg);
+      } else {
+        localStorage.setItem('meepo_open_login_info', JSON.stringify(res));
+        // 设置菜单
+        this.sidebar.setLoginMenu();
+        this.router.navigate(['/web/site/entry/' + this.module + '/home']);
+      }
     });;
   }
 

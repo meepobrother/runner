@@ -28,14 +28,15 @@ export const comnponents = [
   ProcessTab2Component, ProcessBox1Component,
   ProcessBox2Component, We7SrcDirective
 ];
-
+import { ThemesModule } from '../themes/themes.module';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThemesModule
   ],
   declarations: [
     ...comnponents
@@ -45,7 +46,8 @@ export const comnponents = [
     RouterModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThemesModule
   ]
 })
 export class SharedModule { }

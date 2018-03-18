@@ -6,6 +6,7 @@ import { RouterModule, UrlSerializer } from '@angular/router';
 import { We7Service } from './we7.service';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +20,8 @@ import { environment } from '../environments/environment';
       path: '**',
       loadChildren: 'app/web/web.module#WebModule'
     }]),
-    HttpClientModule
+    HttpClientModule,
+    CoreModule
   ],
   providers: [{
     provide: UrlSerializer,

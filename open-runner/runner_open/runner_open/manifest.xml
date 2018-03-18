@@ -3,7 +3,7 @@
 	<application setting="false">
 		<name><![CDATA[跑腿开放平台]]></name>
 		<identifie><![CDATA[runner_open]]></identifie>
-		<version><![CDATA[1.0.0]]></version>
+		<version><![CDATA[1.0.1]]></version>
 		<type><![CDATA[business]]></type>
 		<ability><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></ability>
 		<description><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></description>

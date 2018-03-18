@@ -132,4 +132,10 @@ class Runner_openModuleSite extends WeModuleSite
         $this->checkWebDo("wordshow");
         include $this->template('web/index');
     }
+
+    public function doWebHome(){
+        global $_W, $_GPC;
+        $this->checkWebDo("home");
+        include $this->template('web/index');
+    }
 }

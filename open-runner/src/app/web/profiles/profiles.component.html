@@ -1,0 +1,22 @@
+<div class="page-container">
+  <div class="left-content">
+    <div class="mother-grid-inner">
+      <header-main></header-main>
+      <div class="inner-block">
+        <div class="main-page-myprofit">
+          <div class="main-page-box">
+            <div class="main-page-body">
+              <ul>
+                <li>appid: {{info.appid}}</li>
+                <li>appkey: <span *ngIf="showKey">{{info.appkey}}</span><a (click)="showKey = !showKey">查看</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <copyrights></copyrights>
+    </div>
+  </div>
+  <sidebar-menu></sidebar-menu>
+  <div class="clearfix"></div>
+</div>

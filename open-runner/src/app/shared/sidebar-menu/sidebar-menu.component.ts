@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../../environments/environment';
+import { SidebarService } from '../../themes/sidebar.service';
 @Component({
   selector: 'sidebar-menu',
   templateUrl: './sidebar-menu.component.html',
@@ -7,18 +8,9 @@ import { environment } from '../../../environments/environment';
 })
 export class SidebarMenuComponent implements OnInit {
   module: string = environment.module;
-
-  list: any[] = [{
-    title: '开发文档',
-    link: '/web/site/entry/' + environment.module + '/developword'
-  }, {
-    title: '错误代码',
-    link: '/web/site/entry/' + environment.module + '/errorcode'
-  }, {
-    title: 'Demo下载',
-    link: '/web/site/entry/' + environment.module + '/demo'
-  }];
-  constructor() { }
+  constructor(
+    public sidebar: SidebarService
+  ) { }
 
   ngOnInit() {
   }

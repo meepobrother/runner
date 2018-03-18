@@ -6,7 +6,7 @@
   </div>
   <div class="menu">
     <ul id="menu">
-      <li *ngFor="let item of list">
+      <li *ngFor="let item of sidebar.menus">
         <a [routerLink]="item.link" routerLinkActive="active">
           <i class="fa fa-book nav_icon"></i>
           <span>{{item.title}}</span>

@@ -10,6 +10,8 @@ import { DemoComponent } from './demo/demo.component';
 import { ProcessComponent } from './process/process.component';
 import { WordshowComponent } from './wordshow/wordshow.component';
 import { SgintokenComponent } from './sgintoken/sgintoken.component';
+import { IndexComponent } from './index/index.component';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 const routes: Routes = [{
   path: 'login',
@@ -36,11 +38,17 @@ const routes: Routes = [{
   path: 'index',
   component: LoginComponent
 }, {
+  path: 'home',
+  component: IndexComponent
+}, {
   path: 'wordshow',
   component: WordshowComponent
-},{
+}, {
   path: 'sgintoken',
   component: SgintokenComponent
+}, {
+  path: 'profiles',
+  component: ProfilesComponent
 }, {
   path: '**',
   component: LoginComponent
