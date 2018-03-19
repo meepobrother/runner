@@ -1,0 +1,34 @@
+<div nz-row [nzGutter]="24" class="py-lg">
+    <div nz-col [nzSpan]="6">
+        <nz-card nzTitle="基础设置" nzNoPadding>
+            <a (click)="active=1" class="d-block py-sm px-md" [ngClass]="{'bg-primary-light text-white':active===1}">系统设置</a>
+            <a (click)="active=2" class="d-block py-sm px-md" [ngClass]="{'bg-primary-light text-white':active===2}">分享设置</a>
+            <a (click)="active=3" class="d-block py-sm px-md" [ngClass]="{'bg-primary-light text-white':active===3}">短信设置</a>
+            <a (click)="active=4" class="d-block py-sm px-md" [ngClass]="{'bg-primary-light text-white':active===4}">模板消息</a>
+        </nz-card>
+        <nz-card nzTitle="开放平台" nzNoPadding>
+            <a (click)="active=5" class="d-block py-sm px-md" [ngClass]="{'bg-primary-light text-white':active===5}">绑定账号</a>
+            <a (click)="active=6" class="d-block py-sm px-md" [ngClass]="{'bg-primary-light text-white':active===6}">共享设置</a>
+        </nz-card>
+    </div>
+    <div nz-col [nzSpan]="18">
+        <nz-card nzTitle="系统设置" *ngIf="active===1">
+            <app-setting-system></app-setting-system>
+        </nz-card>
+        <nz-card nzTitle="分享设置" *ngIf="active===2">
+            <app-setting-share></app-setting-share>
+        </nz-card>
+        <nz-card nzTitle="短信设置" *ngIf="active===3">
+            <app-setting-sms></app-setting-sms>
+        </nz-card>
+        <nz-card nzTitle="模板消息" *ngIf="active===4">
+            <app-setting-tpl></app-setting-tpl>
+        </nz-card>
+        <nz-card nzTitle="开放平台" *ngIf="active===5" [nzBordered]="false">
+            <app-setting-open></app-setting-open>
+        </nz-card>
+        <nz-card nzTitle="共享设置" *ngIf="active===6">
+            <app-setting-api></app-setting-api>
+        </nz-card>
+    </div>
+</div>

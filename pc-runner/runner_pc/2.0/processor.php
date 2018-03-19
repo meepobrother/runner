@@ -1,6 +1,6 @@
 <?php
 
-class Runner_pcModuleProcessor extends WeModuleProcessor {
+class Runner_openModuleProcessor extends WeModuleProcessor {
 	public function respond() {
 		$content = $this->message['content'];
 	}

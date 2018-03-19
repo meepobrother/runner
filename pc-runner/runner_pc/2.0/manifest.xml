@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://www.we7.cc" versionCode="">
 	<application setting="false">
-		<name><![CDATA[跑腿PC端]]></name>
-		<identifie><![CDATA[runner_pc]]></identifie>
-		<version><![CDATA[2.3]]></version>
+		<name><![CDATA[跑腿开放平台]]></name>
+		<identifie><![CDATA[runner_open]]></identifie>
+		<version><![CDATA[1.0.3]]></version>
 		<type><![CDATA[business]]></type>
-		<ability><![CDATA[跑腿PC端]]></ability>
-		<description><![CDATA[跑腿PC端]]></description>
-		<author><![CDATA[imeepos]]></author>
-		<url><![CDATA[https://github.com/meepobrother/runner_pc#readme]]></url>
+		<ability><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></ability>
+		<description><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></description>
+		<author><![CDATA[]]></author>
+		<url><![CDATA[https://github.com/meepobrother/runner_open#readme]]></url>
 	</application>
 	<platform>
 		<subscribes>
@@ -20,29 +20,22 @@
 		<card embed="false" />
 		<supports>
 			<item type="app" />
-			<item type="webapp" />
-			<item type="system_welcome" />
 		</supports>
 	</platform>
 	<bindings>
 		<cover>
+			<entry title="前台接口" do="open" state="" direct="true" />
 		</cover>
 		<menu>
-			<entry title="设置" do="setting" state="" direct="false" />
+			<entry title="登录" do="login" state="" direct="true" />
+			<entry title="注册" do="register" state="" direct="true" />
+			<entry title="忘记密码" do="forget" state="" direct="true" />
+			<entry title="开发文档" do="developword" state="" direct="true" />
+			<entry title="错误代码" do="errorcode" state="" direct="true" />
+			<entry title="Demo下载" do="demo" state="" direct="true" />
+			<entry title="接入流程" do="process" state="" direct="true" />
+			<entry title="后台接口" do="open" state="" direct="true" />
 		</menu>
-		<system_welcome>
-			<entry title="首页" do="index" state="" direct="false" />
-		</system_welcome>
-		<webapp>
-			<entry title="首页" do="index" state="" direct="true" />
-			<entry title="招商加盟" do="cooperation" state="" direct="true" />
-			<entry title="服务介绍" do="introduction" state="" direct="true" />
-			<entry title="加入跑男" do="driver" state="" direct="true" />
-			<entry title="帮我买" do="buy" state="" direct="true" />
-			<entry title="帮我送" do="send" state="" direct="true" />
-			<entry title="帮我取" do="take" state="" direct="true" />
-			<entry title="帮排队" do="takeorder" state="" direct="true" />
-		</webapp>
 	</bindings>
 	<permissions></permissions>
 	<install><![CDATA[install.php]]></install>

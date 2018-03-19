@@ -1,5 +1,6 @@
 <?php
-class Runner_pcModuleSite extends WeModuleSite
+
+class Runner_openModuleSite extends WeModuleSite
 {
     public function __construct()
     {}
@@ -22,7 +23,6 @@ class Runner_pcModuleSite extends WeModuleSite
             exit();
         }
     }
-
     public function checkWebDo($do)
     {
         global $_W, $_GPC;
@@ -58,111 +58,98 @@ class Runner_pcModuleSite extends WeModuleSite
     public function createOpen($name)
     {
         $dir = IA_ROOT . '/addons/' . $this->modulename . '/open/';
-        $file = $dir . $name;
+        if (empty($name)) {
+            die(json_encode(array(
+                'return_msg' => '参数错误',
+                'return_code' => -1,
+            )));
+        }
+        $file = $dir . $name . '.open.php';
         if (file_exists($file)) {
             require $file;
             exit();
+        } else {
+            die(json_encode(array(
+                'return_msg' => '不存在此接口',
+                'return_code' => -1,
+            )));
         }
     }
 
     public function doWebOpen()
     {
         global $_W, $_GPC;
+        header("Access-Control-Allow-Origin: *");
         $this->createOpen($_GPC['open']);
     }
 
     public function doMobileOpen()
     {
         global $_W, $_GPC;
+        header("Access-Control-Allow-Origin: *");
         $this->createOpen($_GPC['open']);
     }
 
-    public function systemSetting()
+    public function doWebindex()
     {
-        $name = 'runner_pc';
-        $module = pdo_get('modules', array('name' => $name));
-        $data = array();
-        $data['title'] = $module['title'];
-        $data['image'] = IA_ROOT . "/addons/" . $name . "/icon.jpg";
-        $plugins = array();
-        $plugins[] = array(
-            'title' => 'pc入口',
-            'active' => false,
-            'items' => array(
-                array(
-                    'title' => '首页',
-                    'entry' => 'webapp',
-                    'do' => 'index',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '招商加盟',
-                    'entry' => 'webapp',
-                    'do' => 'cooperation',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '服务介绍',
-                    'entry' => 'webapp',
-                    'do' => 'introduction',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '加入跑男',
-                    'entry' => 'webapp',
-                    'do' => 'driver',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '帮我买',
-                    'entry' => 'webapp',
-                    'do' => 'buy',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '帮我送',
-                    'entry' => 'webapp',
-                    'do' => 'send',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '帮我取',
-                    'entry' => 'webapp',
-                    'do' => 'take',
-                    'module' => 'runner_pc',
-                ),
-                array(
-                    'title' => '帮排队',
-                    'entry' => 'webapp',
-                    'do' => 'takeorder',
-                    'module' => 'runner_pc',
-                ),
-            ),
-        );
-        // $plugins[] = array(
-        //     'title' => '手机端',
-        //     'active' => false,
-        //     'items' => $this->getModulesBindings($module['name'], 'cover'),
-        // );
-        $plugins[] = array(
-            'title' => '后台管理',
-            'active' => true,
-            'items' => $this->getModulesBindings($module['name'], 'menu'),
-        );
-        // 获取所有模块
-        $data['plugins'] = $plugins;
-        die(json_encode($data));
+        global $_W, $_GPC;
+        $this->checkWebDo("index");
+        include $this->template('web/index');
+    }
+    public function doWeblogin()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("login");
+        include $this->template('web/index');
+    }
+    public function doWebregister()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("register");
+        include $this->template('web/index');
+    }
+    public function doWebforget()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("forget");
+        include $this->template('web/index');
+    }
+    public function doWebdevelopword()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("developword");
+        include $this->template('web/index');
+    }
+    public function doWeberrorcode()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("errorcode");
+        include $this->template('web/index');
+    }
+    public function doWebdemo()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("demo");
+        include $this->template('web/index');
+    }
+    public function doWebprocess()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("process");
+        include $this->template('web/index');
     }
 
-    public function getModulesBindings($name, $entry)
+    public function doWebwordshow()
     {
-        $bindings = pdo_getall('modules_bindings', array('module' => $name, 'entry' => $entry));
-        return $bindings;
-    }
-    public function getModules($name)
-    {
-        $sql = "SELECT * FROM " . tablename('modules') . " WHERE name like '%{$name}%'";
-        return pdo_fetchall($sql, array());
+        global $_W, $_GPC;
+        $this->checkWebDo("wordshow");
+        include $this->template('web/index');
     }
 
+    public function doWebHome()
+    {
+        global $_W, $_GPC;
+        $this->checkWebDo("home");
+        include $this->template('web/index');
+    }
 }

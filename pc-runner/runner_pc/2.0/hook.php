@@ -1,5 +1,5 @@
 <?php
-class Runner_pcModuleHook extends WeModuleHook
+class Runner_openModuleHook extends WeModuleHook
 {
     public function result($errno, $message, $data = '')
     {

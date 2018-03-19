@@ -1,6 +1,5 @@
 <?php
 global $_W, $_GPC;
-include IA_ROOT . "/addons/runner_open/open/_function.php";
 // ini_set('display_errors', true);
 // error_reporting(E_ALL);
 $input = $_GPC['__input'];

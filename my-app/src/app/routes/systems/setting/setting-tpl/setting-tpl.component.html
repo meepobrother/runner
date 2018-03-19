@@ -1,0 +1,47 @@
+<div nz-row [nzGutter]="64">
+    <div nz-col [nzSpan]="24">
+        <form nz-form [formGroup]="systemForm" (ngSubmit)="profileSave($event, systemForm.value)" [nzLayout]="'vertical'">
+            <div nz-form-item nz-row>
+                <div nz-form-label nz-col>
+                    <label for="name" nz-form-item-required>阿里大于appid</label>
+                </div>
+                <div nz-form-control nz-col [nzHasFeedback]="'true'">
+                    <nz-input formControlName="title" [nzId]="'title'"></nz-input>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label nz-col>
+                    <label for="url">阿里大于appkey</label>
+                </div>
+                <div nz-form-control nz-col>
+                    <nz-input formControlName="url" [nzId]="'url'"></nz-input>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label nz-col>
+                    <label for="url">模板ID</label>
+                </div>
+                <div nz-form-control nz-col>
+                    <nz-input formControlName="url" [nzId]="'url'"></nz-input>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label nz-col>
+                    <label for="bio">模板内容</label>
+                </div>
+                <div nz-form-control nz-col>
+                    <nz-input formControlName="desc" [nzId]="'desc'" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'请简要介绍一下运营范围'"></nz-input>
+                    <div nz-form-explain>
+                        请将模板内容粘贴至此
+                        <ul>
+                            <li>code: 验证码</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div nz-row>
+                <button nz-button [nzType]="'primary'" [disabled]="systemForm.invalid">保存数据</button>
+            </div>
+        </form>
+    </div>
+</div>

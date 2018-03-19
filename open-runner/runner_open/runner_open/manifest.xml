@@ -3,7 +3,7 @@
 	<application setting="false">
 		<name><![CDATA[跑腿开放平台]]></name>
 		<identifie><![CDATA[runner_open]]></identifie>
-		<version><![CDATA[1.0.1]]></version>
+		<version><![CDATA[1.0.3]]></version>
 		<type><![CDATA[business]]></type>
 		<ability><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></ability>
 		<description><![CDATA[跑腿开放平台，用于第三方应用接入模块]]></description>
@@ -24,6 +24,7 @@
 	</platform>
 	<bindings>
 		<cover>
+			<entry title="前台接口" do="open" state="" direct="true" />
 		</cover>
 		<menu>
 			<entry title="登录" do="login" state="" direct="true" />
@@ -33,6 +34,7 @@
 			<entry title="错误代码" do="errorcode" state="" direct="true" />
 			<entry title="Demo下载" do="demo" state="" direct="true" />
 			<entry title="接入流程" do="process" state="" direct="true" />
+			<entry title="后台接口" do="open" state="" direct="true" />
 		</menu>
 	</bindings>
 	<permissions></permissions>

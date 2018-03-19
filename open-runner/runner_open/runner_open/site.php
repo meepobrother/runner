@@ -1,9 +1,32 @@
 <?php
+// ini_set('display_errors', true);
+// error_reporting(E_ALL);
 
 class Runner_openModuleSite extends WeModuleSite
 {
     public function __construct()
-    {}
+    {
+        global $_W, $_GPC;
+        $token = $_SERVER['HTTP_TOKEN'];
+        load()->model('user');
+        load()->model('account');
+        if (!empty($token)) {
+            $item = pdo_get('runner_open_token', array('sign' => $token));
+            if (!empty($item)) {
+                $record = user_single($item['uid']);
+                $_W['uid'] = $record['uid'];
+                $_W['username'] = $record['username'];
+                $_W['user'] = $record;
+                $_W['isfounder'] = user_is_founder($_W['uid']);
+            }
+        }
+        if (!empty($_GPC['__uniacid']) || !empty($_GPC['i'])) {
+            $_W['uniacid'] = intval($_GPC['__uniacid']);
+            $_W['uniacid'] = $_W['uniacid'] > 0 ? $_W['uniacid'] : intval($_GPC['i']);
+        } else {
+            $_W['uniacid'] = uni_account_last_switch();
+        }
+    }
 
     public function loader()
     {
@@ -46,34 +69,54 @@ class Runner_openModuleSite extends WeModuleSite
         return !empty($_W['member']);
     }
 
-    public function result($errno, $message, $data = '')
+    public function result($errno, $message = '', $data = array())
     {
         exit(json_encode(array(
-            'errno' => $errno,
-            'message' => $message,
-            'data' => $data,
+            'return_code' => $errno,
+            'return_msg' => $message,
+            'return_content' => $data,
         )));
     }
 
     public function createOpen($name)
     {
         $dir = IA_ROOT . '/addons/' . $this->modulename . '/open/';
+        if (empty($name)) {
+            return $this->result('fail', '参数错误');
+        }
+        $file = $dir . '_function.php';
+        if (file_exists($file)) {
+            include $file;
+        }
+        $name = urldecode($name);
         $file = $dir . $name . '.open.php';
         if (file_exists($file)) {
             require $file;
             exit();
+        } else {
+            return $this->result('fail', '不存在此接口');
         }
     }
 
     public function doWebOpen()
     {
         global $_W, $_GPC;
+        header("Access-Control-Allow-Headers:Content-Type, Accept, Authorization, token");
+        header("Access-Control-Max-Age: 1800");
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            return $this->result('ok', 'oauth pass');
+        }
         $this->createOpen($_GPC['open']);
     }
 
     public function doMobileOpen()
     {
         global $_W, $_GPC;
+        header("Access-Control-Allow-Headers:Content-Type, Accept, Authorization, token");
+        header("Access-Control-Max-Age: 1800");
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            return $this->result('ok', 'oauth pass');
+        }
         $this->createOpen($_GPC['open']);
     }
 
@@ -133,7 +176,8 @@ class Runner_openModuleSite extends WeModuleSite
         include $this->template('web/index');
     }
 
-    public function doWebHome(){
+    public function doWebHome()
+    {
         global $_W, $_GPC;
         $this->checkWebDo("home");
         include $this->template('web/index');

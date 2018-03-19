@@ -67,10 +67,6 @@ export class UtilService {
     return '/app/index.php' + this.getUrl(_do, _params);
   }
 
-  getApiUrl(_do: string, _params: any = {}) {
-
-  }
-
   getSystemUrl(_do: string, _params: any = {}) {
     _params['a'] = this.environment.a;
     _params['c'] = this.environment.c;

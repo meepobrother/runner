@@ -192,3 +192,4 @@ function bulidSign($params)
     $result = strtoupper($string);
     return $result;
 }
+

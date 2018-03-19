@@ -1,5 +1,5 @@
 <?php
-class Runner_pcModule extends WeModule
+class Runner_openModule extends WeModule
 {
     public function result($errno, $message, $data = '')
     {

@@ -1,0 +1,701 @@
+html {
+    height: 100%;
+    width: 100%;
+    background: #F0F0F0;
+}
+
+body {
+    font-family: "微软雅黑";
+    background: #F0F0F0;
+}
+
+.pageRegister {
+    background: #f4f4f4;
+    margin: 0;
+    overflow: hidden;
+}
+
+.pageRegister .con {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 50px;
+}
+
+.pageRegister .con h1 {
+    color: #666;
+    font-size: 20px;
+    text-align: center;
+    padding: 30px 0 30px;
+    line-height: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.pageRegister .con .form-group {
+    width: 100%;
+}
+
+.pageRegister .con .form-group .control-label {
+    color: #666;
+}
+
+.pageRegister .con .form-group .control-label i {
+    font-style: normal;
+    color: #fe514a;
+    vertical-align: middle;
+    padding-right: 3px;
+}
+
+.pageRegister .con .ipt {
+    width: 100%;
+    max-width: 300px;
+}
+
+.pageRegister .con .form-control {
+    max-width: 300px;
+}
+
+.pageRegister .con .text_area {
+    max-width: 93%;
+}
+
+.pageRegister .con .checkbox-inline {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.pageRegister .con .center {
+    text-align: center;
+    margin: 0;
+}
+
+.pageRegister .con .center a {
+    margin-right: 30px;
+}
+
+.pageRegister .con .pbox {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.pageRegister .con .rebtn {
+    width: 200px;
+    height: 40px;
+    margin: 0 auto;
+    display: block;
+    background: #009fe8;
+}
+
+.pageRegister .con .rebtn:hover {
+    background: #00b6ed;
+}
+
+.pageRegister .con .sure {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.pageRegister .con .row {
+    margin: 40px auto 0;
+}
+
+.pageRegister .con .col-md-6l {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: 88px;
+}
+
+.pageRegister .con .col-md-6l .control-label {
+    width: 21%;
+}
+
+.pageRegister .con .col-md-6l .col-sm-10 {
+    width: 330px;
+}
+
+.pageLogin {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
+
+.pageLogin .row {
+    margin: 0;
+    position: relative;
+    height: 100%;
+}
+
+.pageLogin .row .col-md-4 {
+    background: #fff;
+    position: relative;
+    width: 40%;
+    height: 100%;
+    padding: 0;
+}
+
+.pageLogin .row .col-md-4 .log_con {
+    font-size: 12px;
+    line-height: 30px;
+    width: 310px;
+    margin: 40% auto 0;
+    overflow: hidden;
+}
+
+.pageLogin .row .col-md-4 .log_con h1 {
+    font-size: 26px;
+    color: #000000;
+}
+
+.pageLogin .row .col-md-4 .log_con .iptbox {
+    overflow: hidden;
+    margin-top: 26px;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.pageLogin .row .col-md-4 .log_con .iptbox .lab {
+    display: inline-block;
+    width: 32px;
+}
+
+.pageLogin .row .col-md-4 .log_con .iptbox .col {
+    display: inline-block;
+}
+
+.pageLogin .row .col-md-4 .log_con .iptbox .col input {
+    outline: none;
+    border: none;
+    height: 24px;
+    line-height: 24px;
+    width: 240px;
+}
+
+.pageLogin .row .col-md-4 .log_con .forget {
+    text-align: right;
+    margin: 14px 0;
+}
+
+.pageLogin .row .col-md-4 .log_con .forget a {
+    text-decoration: none;
+    color: #009fe8;
+}
+
+.pageLogin .row .col-md-4 .log_con .log_btn {
+    width: 100%;
+    line-height: 46px;
+    background: #009fe8;
+    color: #fff;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.pageLogin .row .col-md-4 .log_con .go {
+    text-align: right;
+    color: #999999;
+    margin-top: 10px;
+}
+
+.pageLogin .row .col-md-4 .log_con .go a {
+    color: #009fe8;
+    text-decoration: none;
+}
+
+.pageLogin .row .col-md-4 .log_con .go img {
+    margin-left: 4px;
+    margin-top: -3px;
+}
+
+.pageLogin .row .col-md-6 {
+    position: relative;
+    width: 60%;
+    padding: 0;
+    height: 100%;
+    background: url("../images/login_banner.png") center center no-repeat;
+    background-size: 100% 100%;
+}
+
+.pageLogin .row .login_title {
+    margin: 8% auto 0;
+    width: 464px;
+}
+
+.pageLogin .row .login_title img {
+    width: 100%;
+}
+
+.changePass .reform {
+    padding: 20px 0 20px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.changePass .reform .control-label {
+    width: 130px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.changePass .reform .col-sm-10 {
+    width: 240px;
+    padding: 0;
+}
+
+.changePass .reform .col-sm-10 .name {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px 6px 0;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+}
+
+.changePass .reform .codebox {
+    overflow: hidden;
+}
+
+.changePass .reform .codebox .ipt_code {
+    width: 120px;
+    float: left;
+}
+
+.changePass .reform .codebox .btn_code {
+    width: 130px;
+    float: left;
+    margin-left: 20px;
+}
+
+.changePass h1.title {
+    font-size: 16px;
+    color: #606060;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.changePass .form-group {
+    margin-right: 0;
+    margin-bottom: 24px;
+}
+
+.changePass .form-group .control-label i {
+    color: #fe514a;
+    padding: 5px;
+    font-size: 16px;
+    position: relative;
+    top: 4px;
+}
+
+.changePass .statebox {
+    height: 100px;
+    border-bottom: 1px solid #e7e7e7;
+    overflow: hidden;
+}
+
+.changePass .statebox .state {
+    text-align: center;
+    line-height: 80px;
+    font-size: 20px;
+    color: #fe514a;
+}
+
+.changePass .statebox .state2 {
+    display: none;
+}
+
+.changePass .statebox .state3 {
+    display: none;
+}
+
+.changePass .ipt_file {
+    margin-left: 0;
+}
+
+.changePass .process {
+    margin-bottom: 40px;
+    box-shadow: none;
+    background: transparent;
+    text-align: center;
+}
+
+.changePass .sure {
+    margin-left: 0;
+}
+
+.changePass .sure .btn {
+    margin-left: 115px;
+    min-width: 100px;
+}
+
+.rechargeCard {
+    margin-top: 50px;
+}
+
+.rechargeCard .bank {
+    max-width: 900px;
+}
+
+.rechargeCard .bank ul {
+    overflow: hidden;
+}
+
+.rechargeCard .bank ul li {
+    float: left;
+}
+
+.rechargeCard .bank ul li .bank_pic.on {
+    border: 2px solid red;
+}
+
+.rechargeCard .bank_pic {
+    width: 129px;
+    height: 37px;
+    margin: 10px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.rechargeCard .bank_pic1 {
+    background-position: 0 -1px;
+}
+
+.rechargeCard .bank_pic2 {
+    background-position: -139px -1px;
+}
+
+.rechargeCard .bank_pic3 {
+    background-position: -278px -1px;
+}
+
+.rechargeCard .bank_pic4 {
+    background-position: -417px -1px;
+}
+
+.rechargeCard .bank_pic5 {
+    background-position: -556px -1px;
+}
+
+.rechargeCard .bank_pic6 {
+    background-position: -1px -51px;
+}
+
+.rechargeCard .bank_pic7 {
+    background-position: -139px -51px;
+}
+
+.rechargeCard .bank_pic8 {
+    background-position: -417px -51px;
+}
+
+.rechargeCard .bank_pic9 {
+    background-position: -556px -49px;
+}
+
+.rechargeCard .bank_pic10 {
+    background-position: -1px -101px;
+}
+
+.rechargeCard .bank_pic11 {
+    background-position: -139px -101px;
+}
+
+.rechargeCard .bank_pic12 {
+    background-position: -278px -101px;
+}
+
+.rechargeCard .bank_pic13 {
+    background-position: -417px -101px;
+}
+
+.rechargeCard .bank_pic14 {
+    background-position: -556px -99px;
+}
+
+.rechargeCard .bank_pic15 {
+    background-position: -1px -150px;
+}
+
+.rechargeCard .bank_picker {
+    margin-top: 0;
+    line-height: 34px;
+    font-size: 12px;
+    color: #fe514a;
+}
+
+.confirm .form-group .control-label {
+    font-size: 14px;
+}
+
+.confirm .ipt_file input {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.api-list2 {
+    display: none;
+    margin-top: 50px;
+}
+
+.api-list {
+    margin-top: 100px;
+}
+
+.api-list ul li,
+.api-list2 ul li {
+    float: left;
+    width: 33.33%;
+    text-align: center;
+}
+
+.api-list2 ul li {
+    width: 100%;
+    text-align: center;
+}
+
+.api-list ul li a,
+.api-list2 ul li a {
+    color: #666;
+    text-decoration: underline;
+}
+
+.api-list ul li a:hover,
+.api-list2 ul li a:hover {
+    color: #009fe8;
+}
+
+.icon {
+    width: 1.4em;
+    height: 1.4em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.api-liucheng {
+    width: 77%;
+    margin: 5% auto 0;
+}
+
+.api-liucheng ul {
+    margin-left: 20px;
+}
+
+.api-liucheng ul li {
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+}
+
+.api-liucheng ul li.active .step {
+    background: #1f5bc6;
+    color: #fff;
+    box-shadow: 0 0 40px 0 #1affff;
+    -webkit-box-shadow: 0 0 40px 0 #fff;
+}
+
+.api-liucheng ul li .step {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    border-radius: 50%;
+    color: #009fe8;
+    font-size: 12px;
+    padding-top: 24px;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+    -moz-transition: all ease .3s;
+    -ms-transition: all ease .3s;
+    -o-transition: all ease .3s;
+    box-shadow: 0 3px 2px #217ad5;
+    -webkit-box-shadow: 0 3px 2px #217ad5;
+    -moz-box-shadow: 0 3px 2px #217ad5;
+}
+
+.api-liucheng ul li .step .icon {
+    margin-top: 6px;
+}
+
+.api-liucheng ul li.active .title {
+    color: #fff;
+}
+
+.api-liucheng ul li .title {
+    font-size: 14px;
+    color: #bbe5ff;
+    margin-top: 10px;
+}
+
+.api-liucheng ul li.stepp {
+    height: 90px;
+    line-height: 90px;
+    width: 60px;
+    text-align: center;
+    color: #fff;
+}
+
+.api-demo {
+    position: relative;
+    margin-top: 50px;
+    height: 384px;
+}
+
+.api-demo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 6px 6px 10px rgba(31, 91, 198, .6);
+    display: none;
+}
+
+.api-descs {
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+}
+
+.api-desc {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.api-desc .subtit {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 40px;
+}
+
+.api-desc p {
+    position: absolute;
+    padding: 0 20px 0 10px;
+    left: 28px;
+    top: 3px;
+    color: #059eff;
+    font-size: 12px;
+    background: #fff;
+    margin-left: -8px;
+    display: inline-block;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 23px;
+    line-height: 21px;
+    z-index: 8;
+}
+
+.api-desc .sequence {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #fff;
+    background: #079fff;
+    text-align: center;
+    line-height: 25px;
+    border: solid 3px #fff;
+    z-index: 10;
+    display: inline-block;
+}
+
+.qqqun {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 16px;
+}
+
+.qqqun a {
+    color: #666;
+}
+
+
+/*# sourceMappingURL=zzstyle.css.map */
+
+@media (max-width: 1200px) {
+    .login {
+        display: none;
+    }
+    .pageLogin {
+        display: block;
+    }
+}
+
+@media (max-width: 991px) {
+    .api-list {
+        margin-top: 100px;
+    }
+    .pageLogin .row .col-md-4 .log_con {
+        margin-top: 0;
+        padding-top: 200px;
+    }
+    .pageLogin .row .col-md-4 .log_con h1 {
+        text-align: center;
+    }
+    .pageLogin .row .col-md-4 {
+        width: 100%;
+    }
+}
+
+@media (max-width:320px) {
+    .api-list {
+        margin-top: 30px;
+    }
+    .pageLogin .row .col-md-4 .log_con {
+        margin-top: 0;
+        padding-top: 50px;
+        width: 260px;
+        background: #fff;
+    }
+    .pageLogin .row .col-md-4 .log_con .iptbox .col input {
+        width: 200px;
+    }
+}
+
+@media (max-width:1920px) {
+    .api-liucheng {
+        width: 77%;
+    }
+}
+
+@media (max-width:1860px) {
+    .api-liucheng {
+        width: 76%;
+    }
+    .api-liucheng ul li .step {
+        width: 80px;
+        height: 80px;
+    }
+    .api-liucheng ul li.stepp {
+        width: 50px;
+    }
+    .api-demo {
+        height: 353px;
+    }
+}

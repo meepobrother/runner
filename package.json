@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "git": "git add . && git commit -m 'update' && git push origin master"
+    "git": "git add . && git commit -m 'update' && git push origin master",
+    "rm": "find ./ -name '.DS_Store' |xargs rm -rf"
   },
   "repository": {
     "type": "git",

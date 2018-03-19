@@ -1,0 +1,33 @@
+<div nz-row [nzGutter]="64">
+    <div nz-col [nzSpan]="16">
+        <form nz-form [formGroup]="systemForm" (ngSubmit)="profileSave($event, systemForm.value)" [nzLayout]="'vertical'">
+            <div nz-form-item nz-row>
+                <div nz-form-label nz-col>
+                    <label for="name" nz-form-item-required>分享标题</label>
+                </div>
+                <div nz-form-control nz-col [nzHasFeedback]="'true'">
+                    <nz-input formControlName="title" [nzId]="'title'"></nz-input>
+                </div>
+            </div>
+            <div nz-form-item nz-row>
+                <div nz-form-label nz-col>
+                    <label for="bio">分享简介</label>
+                </div>
+                <div nz-form-control nz-col>
+                    <nz-input formControlName="desc" [nzId]="'desc'" [nzType]="'textarea'" [nzRows]="'4'" [nzPlaceHolder]="'请简要介绍一下运营范围'"></nz-input>
+                    <div nz-form-explain></div>
+                </div>
+            </div>
+            <div nz-row>
+                <button nz-button [nzType]="'primary'" [disabled]="systemForm.invalid">保存数据</button>
+            </div>
+        </form>
+    </div>
+    <div nz-col [nzSpan]="8">
+        <h4>分享图标</h4>
+        <img src="./assets/img/avatar.jpg" style="width: 100%;">
+        <button nz-button class="ant-btn__block">
+            <span>上传新的图标</span>
+        </button>
+    </div>
+</div>
